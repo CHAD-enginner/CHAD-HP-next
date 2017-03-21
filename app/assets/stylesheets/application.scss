@@ -1,0 +1,20 @@
+
+@import "chads";
+@import "missions";
+@import "actions";
+@import "sports";
+@import "educations";
+@import "trails";
+@import "members";
+@import "users";
+@import "common";
+@import "menu_bar";
+@import "contacts";
+@import "learnmorebtn";
+@import "font-awesome";
+@import "bootstrap";
+
+//cssの拡張子を一括でsccs拡張子に変換してくれるコマンドが存在するので、手動で変換せずにターミネルで変換する！
+//find app/assets -name *.css | while read file; do mv "$file" "${file%%.css}.scss"; done
+
+

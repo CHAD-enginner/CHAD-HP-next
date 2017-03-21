@@ -1,0 +1,88 @@
+//erb拡張子を一括でhaml拡張子に変換してくれるコマンドがあるので、手動でしない！
+//rake haml:replace_erbsこれをすると、自動でファイルが置換される！！！！！！
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title CHADHP
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    / %p.notice
+    /   = notice
+    / %p.alert
+    /   = alert
+    %nav.navbar.navbar-default.navbar-fixed-top.topnav{:role => "navigation"}
+      .container.topnav
+        / Brand and toggle get grouped for better mobile display
+        .navbar-header
+          %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to "学生団体CHAD", root_path, class: "navbar-brand topnav"
+        / Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              = link_to "理念", missions_path
+            %li.actions-bar
+              = link_to "活動内容", actions_path
+              %ul.actions-sub
+              /   %li.sub-list
+              /     =link_to "運動会", actions_sports_path, class: "sub-word"
+              /   %li.sub-list
+              /     =link_to "教育", actions_educations_path, class: "sub-word"
+            %li
+              = link_to "CHADの軌跡", trails_path
+            %li.members-bar
+              = link_to "メンバー", members_path
+              %ul.members-sub
+            %li
+              = link_to "お問い合わせ", new_contact_path
+        / /.navbar-collapse
+      / /.container
+    = yield
+    .banner
+      .container
+        .row
+          .col-lg-6
+            %h3.banner-h3 Connect to 学生団体CHAD
+            %p.banner-p 〒602-8580       京都市上京区今出川通烏丸東入 今出川キャンパス
+          .col-lg-6
+            %h3.banner-h3 ミーティング
+            %p.banner-p
+              毎週金曜日
+              %strong 18:40~
+            %p.sss
+      / /.container
+    .banner
+      .container
+        .row
+          .col-lg-6
+            %h3.banner-sns
+          .col-lg-6
+            %ul.list-inline.banner-social-buttons
+              %li
+                = link_to "https://twitter.com/cambodia_plan", class: "btn btn-default btn-lg", target: ["_blank"] do # target: ["_blank"]を書くことでリンク先を押すと、別タグで開くようにできる。
+                  %i.fa.fa-twitter.fa-fw
+                  %span.network-name Twitter
+              %li
+                = link_to "https://www.facebook.com/challengeofchad/", class: "btn btn-default btn-lg", target: ["_blank"] do
+                  %i.fa.fa-facebook.fa-fw
+                  %span.network-name FACEBOOK
+              %li
+                = link_to "https://www.instagram.com/chad.0917/", class: "btn btn-default btn-lg", target: ["_blank"] do
+                  %i.fa.fa-instagram.fa-fw
+                  %span.network-name instagram
+              %li
+                = link_to "http://profile.ameba.jp/chad20170111", class: "btn btn-default btn-lg", target: ["_blank"] do
+                  %i.fa.fa-pencil.fa-fw
+                  %span.network-name blog
+    %footer
+      .container
+        .row
+          .col-lg-12
+            %p.copyright.text-muted.small Copyright © 学生団体CHAD.2017 All Rights Reserved

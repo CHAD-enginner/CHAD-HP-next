@@ -1,0 +1,43 @@
+.contact-intro-header
+  .chat-group-form
+    %h1.contact-form__wrapper お問い合わせ
+    = form_for (@contact), html: {id: 'contact-form', class: 'contact-form'} do |f|
+      .chat-group-form__field.clearfix
+        .chat-group-form__field--left
+          .chat-group-form__label
+            = f.label :お名前
+            %span.form-require （必須）
+        .chat-group-form__field--right
+          = f.text_field :name, :placeholder => "例）同志社 太郎", id: "contact-form_name", class: "contact-form__input"
+      .chat-group-form__field.clearfix
+        .chat-group-form__field--left
+          .chat-group-form__label
+            = f.label :メールアドレス
+            %span.form-require （必須）
+        .chat-group-form__field--right
+          = f.text_field :email, :placeholder => "例）chad@gmail.com", id: "contact-form_email", class: "contact-form__input"
+      .chat-group-form__field.clearfix
+        .chat-group-form__field--left
+          .chat-group-form__label
+            = f.label :学校・企業名
+        .chat-group-form__field--right
+          =f.text_field :university, placeholder: "例）同志社大学 経済学部", id: "contact-form_university", class: "contact-form__input"
+      .chat-group-form__field.clearfix
+        .chat-group-form__field--left
+          .chat-group-form__label
+            = f.label :学年（学生の場合）
+        .chat-group-form__field--right
+          =f.text_field :grade, placeholder: "例）二回生", id: "contact-form_grade", class: "contact-form__input"
+      .chat-group-form__field.clearfix
+        .chat-group-form__field--left
+          .chat-group-form__label
+            = f.label :お問い合わせ内容
+            %span.form-require （必須）
+        .chat-group-form__field--right
+          =f.text_area :text, placeholder: "例）CHADに入りたい！！！", id: "contact-form_text", class: "contact-form__input"
+      .chat-group-form__field.clearfix
+        .chat-group-form__field--left
+        .chat-group-form__field--right
+          = f.submit '送信', class: "contact-form__action-btn"
+
+//入力ミスがあった場合は、JSポップで再入力を促す！！！！！！！！

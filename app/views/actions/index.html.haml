@@ -1,0 +1,111 @@
+%body
+  / Navigation
+  / Header
+  %a{:name => "about"}
+  .actions-intro-header
+    .container
+      .row
+        .col-lg-12
+          .intro-message
+            %h1 Actions
+            %h3 カンボジアの教育問題を解決すべく、日々活動しています。
+            /
+              <hr class="intro-divider">
+              <ul class="list-inline intro-social-buttons">
+              <li>
+              <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+              </li>
+              <li>
+              <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+              </li>
+              <li>
+              <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+              </li>
+              </ul>
+    / /.container
+  / /.intro-header
+  / Page Content
+  %a{:name => "services"}
+  .content-section-a
+    .container
+      .row
+        .col-lg-5.col-sm-6
+          %hr.section-heading-spacer/
+          .clearfix
+          %h2.section-heading
+            運動会
+            %br>/
+            Sports Festival Project
+          %p.lead
+            毎年、カンボジアの小学校で運動会を
+            %br
+            開催しております。
+          .learn-more_btn_wrapper
+            = link_to actions_sports_path, class: "button change-border01" do
+              %span.change-border01__inner learn more
+        .col-lg-5.col-lg-offset-2.col-sm-6
+          = image_tag "image 1.jpg", class: "img-responsive", alt: ""
+    / /.container
+  / /.content-section-a
+  .content-section-b
+    .container
+      .row
+        .col-lg-5.col-lg-offset-1.col-sm-push-6.col-sm-6
+          %hr.section-heading-spacer/
+          .clearfix
+          %h2.section-heading
+            教育プロジェクト
+            %br>/
+            Education Project
+          %p.lead
+            日本語教育・ゴミ問題など、
+            %br
+            様々な教育プロジェクトを行なっています。
+          .learn-more_btn_wrapper
+            = link_to actions_educations_path, class: "button change-border01" do
+              %span.change-border01__inner learn more
+        .col-lg-5.col-sm-pull-6.col-sm-6
+          = image_tag "dog.png", class: "img-responsive", alt: ""
+    / /.container
+  / /.content-section-b
+  / .content-section-a
+  /   .container
+  /     .row
+  /       .col-lg-5.col-sm-6
+  /         %hr.section-heading-spacer/
+  /         .clearfix
+  /         %h2.section-heading
+  /           CHADの軌跡
+  /           %br>/
+  /           Our Trails
+  /         %p.lead
+  /           This template features the 'Lato' font, part of the
+  /           = succeed "," do
+  /             %a{:href => "http://www.google.com/fonts", :target => "_blank"} Google Web Font library
+  /           = succeed "." do
+  /             %a{:href => "http://fontawesome.io", :target => "_blank"} icons from Font Awesome
+  /         .learn-more_btn
+  /           learn more
+  /       .col-lg-5.col-lg-offset-2.col-sm-6
+  /         = image_tag "phones.png", class: "img-responsive", alt: ""
+  /   / /.container
+  / / /.content-section-a
+  / .content-section-b
+  /   .container
+  /     .row
+  /       .col-lg-5.col-lg-offset-1.col-sm-push-6.col-sm-6
+  /         %hr.section-heading-spacer/
+  /         .clearfix
+  /         %h2.section-heading
+  /           メンバー
+  /           %br>/
+  /           Member
+  /         %p.lead
+  /           Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by
+  /           = succeed "!" do
+  /             %a{:href => "http://www.psdcovers.com/", :target => "_blank"} PSDCovers
+  /         .learn-more_btn
+  /           learn more
+  /       .col-lg-5.col-sm-pull-6.col-sm-6
+  /         = image_tag "dog.png", class: "img-responsive", alt: ""
+  /   / /.container

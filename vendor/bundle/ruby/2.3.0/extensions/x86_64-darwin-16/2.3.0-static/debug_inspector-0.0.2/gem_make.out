@@ -1,0 +1,13 @@
+current directory: /Users/jinzhengpengye/projects/CHAD-HP/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+creating Makefile
+
+current directory: /Users/jinzhengpengye/projects/CHAD-HP/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /Users/jinzhengpengye/projects/CHAD-HP/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+current directory: /Users/jinzhengpengye/projects/CHAD-HP/vendor/bundle/ruby/2.3.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" install

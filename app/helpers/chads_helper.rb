@@ -1,0 +1,2 @@
+module ChadsHelper
+end

@@ -1,0 +1,94 @@
+%body
+  / Navigation
+  / Header
+  .members-intro-header
+    .container
+      .row
+        .col-lg-12
+          .intro-message
+            %h1 Members
+            %h3 学生団体CHADを支える頼もしいメンバーをご紹介します。
+  .content-section-a
+    .container
+      .row
+        .col-lg-5.col-sm-6.col-center
+          %hr.section-heading-spacer/
+          .clearfix
+          %h2.section-heading
+            メンバー
+            %br>/
+            Members
+          %p.lead
+            総勢40人のメンバーで日々活動しています。
+  .actions-sports-university-intro-header
+    .actions-sports-university-intro-message
+      .university-box
+        %h1 一期生（創設メンバー）
+        %h3 創設メンバーです。
+  .content-section-a
+    .container
+      .row
+        .col-lg-5.col-sm-6.col-center
+          %hr.section-heading-spacer/
+          .clearfix
+          %h2.section-heading
+            一期生
+            %br>/
+            Founders
+          %p.lead
+            2014年、このメンバーで学生団体CHADを創設しました。
+            %br
+            すごいね。
+          .learn-more_btn_wrapper
+            = link_to kisei_users_path(@first.id), class: "button change-border01" do
+              %span.change-border01__inner learn more
+        .col-lg-5.col-lg-offset-2.col-sm-6
+          = image_tag "image 1.jpg", class: "img-responsive", alt: ""
+  .actions-sports-elementary-intro-header
+    .actions-sports-elementary-intro-message
+      .elementary-box
+        %h1 二期生
+        %h3 現在のCHADをまとめています。
+  .content-section-a
+    .container
+      .row
+        .col-lg-5.col-sm-6.col-center
+          %hr.section-heading-spacer/
+          .clearfix
+          %h2.section-heading
+            二期生
+            %br>/
+            Second
+          %p.lead
+            現在、学生団体CHADで最上回生です。
+            %br
+            頑張って。
+          .learn-more_btn_wrapper
+            = link_to kisei_users_path(@second.id), class: "button change-border01" do
+              %span.change-border01__inner learn more
+        .col-lg-5.col-lg-offset-2.col-sm-6
+          = image_tag "image 1.jpg", class: "img-responsive", alt: ""
+  .actions-sports-university-intro-header
+    .actions-sports-university-intro-message
+      .university-box
+        %h1 三期生
+        %h3 可愛い女の子ばっかりです。
+  .content-section-a
+    .container
+      .row
+        .col-lg-5.col-sm-6.col-center
+          %hr.section-heading-spacer/
+          .clearfix
+          %h2.section-heading
+            三期生
+            %br>/
+            Third
+          %p.lead
+            本当に頼もしいです。
+            %br
+            これからのCHADを担って行く存在です。
+          .learn-more_btn_wrapper
+            = link_to kisei_users_path(@third.id), class: "button change-border01" do
+              %span.change-border01__inner learn more
+        .col-lg-5.col-lg-offset-2.col-sm-6
+          = image_tag "image 1.jpg", class: "img-responsive", alt: ""

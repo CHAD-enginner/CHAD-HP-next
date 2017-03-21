@@ -1,0 +1,77 @@
+.intro-header
+  .container
+    .row
+      .col-lg-12
+        .intro-message
+          %h1 Challenge the everything
+          %h3 私たち、学生団体CHADは何事にも挑戦し続けます。
+.content-section-a
+  .container
+    .row
+      .col-lg-5.col-sm-6
+        %hr.section-heading-spacer/
+        .clearfix
+        %h2.section-heading
+          理念
+          %br>/
+          Mission
+        %p.lead
+          「挑戦」と「自己成長の場の創出」を理念に掲げています。
+        .learn-more_btn_wrapper
+          = link_to missions_path, class: "button change-border01" do
+            %span.change-border01__inner learn more
+      .col-lg-5.col-lg-offset-2.col-sm-6
+        = image_tag "image 1.jpg", class: "img-responsive", alt: ""
+.content-section-b
+  .container
+    .row
+      .col-lg-5.col-lg-offset-1.col-sm-push-6.col-sm-6
+        %hr.section-heading-spacer/
+        .clearfix
+        %h2.section-heading
+          活動内容
+          %br>/
+          Works
+        %p.lead
+          カンボジアの教育問題を解決すべく、主に二つのプロジェクトを行なっています。
+        .learn-more_btn_wrapper
+          = link_to actions_path, class: "button change-border01" do
+            %span.change-border01__inner learn more
+      .col-lg-5.col-sm-pull-6.col-sm-6
+        = image_tag "dog.png", class: "img-responsive", alt: ""
+  / /.container
+/ /.content-section-b
+.content-section-a
+  .container
+    .row
+      .col-lg-5.col-sm-6
+        %hr.section-heading-spacer/
+        .clearfix
+        %h2.section-heading
+          CHADの軌跡
+          %br>/
+          Our Trails
+        %p.lead
+          学生団体CHAD創設から3年、様々な活動を行ってきました。
+        .learn-more_btn_wrapper
+          = link_to missions_path, class: "button change-border01" do
+            %span.change-border01__inner learn more
+      .col-lg-5.col-lg-offset-2.col-sm-6
+        = image_tag "phones.png", class: "img-responsive", alt: ""
+.content-section-b
+  .container
+    .row
+      .col-lg-5.col-lg-offset-1.col-sm-push-6.col-sm-6
+        %hr.section-heading-spacer/
+        .clearfix
+        %h2.section-heading
+          メンバー
+          %br>/
+          Member
+        %p.lead
+          CHADを支えるメンバーの紹介です。
+        .learn-more_btn_wrapper
+          = link_to members_path, class: "button change-border01" do
+            %span.change-border01__inner learn more
+      .col-lg-5.col-sm-pull-6.col-sm-6
+        = image_tag "dog.png", class: "img-responsive", alt: ""

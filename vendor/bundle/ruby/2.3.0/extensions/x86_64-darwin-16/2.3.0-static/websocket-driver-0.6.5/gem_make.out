@@ -1,0 +1,14 @@
+current directory: /Users/jinzhengpengye/projects/CHAD-HP/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+
+creating Makefile
+
+current directory: /Users/jinzhengpengye/projects/CHAD-HP/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/jinzhengpengye/projects/CHAD-HP/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/jinzhengpengye/projects/CHAD-HP/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" install
