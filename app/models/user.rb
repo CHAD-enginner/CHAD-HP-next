@@ -6,4 +6,6 @@ class User < ApplicationRecord
   validates :phone, presence: true
   validates :avator, presence: true
   validates :kisei_id, presence: true
+
+  mount_uploader :avator, ImageUploader
 end

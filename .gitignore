@@ -25,3 +25,9 @@ config/environments/development.rb
 test/mailers/mail_sender_mailer_test.rb
 
 vendor/bundle/ruby/2.3.0/gems/devise-4.2.1/test/rails_app/config/environments/development.rb
+
+.env
+
+config/initializers/carrierwave.rb
+
+app/mailers/mail_sender_mailer.rb
