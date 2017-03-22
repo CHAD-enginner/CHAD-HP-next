@@ -23,3 +23,5 @@ app/views/mail_sender_mailer/inquiry.html.haml
 config/environments/development.rb
 
 test/mailers/mail_sender_mailer_test.rb
+
+vendor/bundle/ruby/2.3.0/gems/devise-4.2.1/test/rails_app/config/environments/development.rb

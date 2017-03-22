@@ -1,0 +1,41 @@
+ja:
+  activerecord:
+    models:
+      admin_user: 管理者
+      comment: コメント
+      kisei: 期生
+      contact: お問い合わせ
+      user: メンバー
+    attributes:
+      admin_user:
+        email: メールアドレス
+        current_sign_in_at: 最新ログイン日時
+        sign_in_count: ログイン回数
+        created_at: 作成日時
+      kisei:
+        users: メンバー
+        name: 期生
+        text: 紹介文
+        date: 日付
+        backimage: 背景画像
+        created_at: 作成日時
+        updated_at: 更新日時
+      user:
+        kisei: 期生
+        name: 名前
+        email: メールアドレス
+        adress: 住所
+        phone: 電話番号
+        avator: 写真
+        created_at: 作成日時
+        updated_at: 更新日時
+      contact:
+        name: お名前
+        email: メールアドレス
+        university: 大学・企業
+        grade: 学年
+        text: お問い合わせ内容
+        created_at: 作成日時
+        updated_at: 更新日時
+
+
