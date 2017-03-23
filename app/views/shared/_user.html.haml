@@ -1,8 +1,9 @@
 .col-lg-13.col-sm-14.wrapper-image-box
-  .clearfix
   .image-box
-    %image.user-image{src: "#{user.avator}", alt: "#{user.name}"}
+    .user-image{style: "background: url(#{user.avator}); background-size: cover; margin: 0 auto;"}
     %h3.user-name
       =user.name
+    %p
+      =user.role
 
 
