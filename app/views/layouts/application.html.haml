@@ -9,13 +9,8 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    / %p.notice
-    /   = notice
-    / %p.alert
-    /   = alert
     %nav.navbar.navbar-default.navbar-fixed-top.topnav{:role => "navigation"}
       .container.topnav
-        / Brand and toggle get grouped for better mobile display
         .navbar-header
           %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
             %span.sr-only Toggle navigation
@@ -23,7 +18,6 @@
             %span.icon-bar
             %span.icon-bar
           = link_to "学生団体CHAD", root_path, class: "navbar-brand topnav"
-        / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav.navbar-right
             %li
@@ -43,8 +37,6 @@
               %ul.members-sub
             %li
               = link_to "お問い合わせ", new_contact_path
-        / /.navbar-collapse
-      / /.container
     = yield
     .banner
       .container
@@ -58,7 +50,6 @@
               毎週金曜日
               %strong 18:40~
             %p.sss
-      / /.container
     .banner
       .container
         .row
