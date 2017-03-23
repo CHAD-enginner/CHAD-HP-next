@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'chads#index'
+  resources :introductions, only: [:index]
   resources :missions, only: [:index]
   resources :contacts, only: [:new, :create]
   resources :actions, only: [:index]

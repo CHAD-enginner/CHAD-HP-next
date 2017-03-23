@@ -27,6 +27,7 @@ ja:
         adress: 住所
         phone: 電話番号
         avator: 写真
+        role: 役割
         created_at: 作成日時
         updated_at: 更新日時
       contact:
