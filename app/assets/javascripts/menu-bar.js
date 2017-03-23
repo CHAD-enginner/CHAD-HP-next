@@ -12,22 +12,22 @@ $(document).on('turbolinks:load', function(){
 
     var members_sub_html = `<div class='a'>
                               <li class="sub-list">
-                               <a href="/kisei/1/users", class="sub-word">一期生</a>
+                               <a href="/kisei/2/users", class="sub-word">一期生</a>
                               </li>
                               <li class="sub-list">
-                               <a href="/kisei/2/users", class="sub-word">二期生</a>
+                               <a href="/kisei/3/users", class="sub-word">二期生</a>
                               </li>
                               <li class="sub-list">
-                               <a href="/kisei/3/users", class="sub-word">三期生</a>
+                               <a href="/kisei/4/users", class="sub-word">三期生</a>
+                              </li>
+                              <li class="sub-list">
+                               <a href="/kisei/1/users", class="sub-word">RUPP</a>
                               </li>
                             </div>`;
 
     var trails_sub_html = `<div class='a'>
                               <li class="sub-list">
-                                <a href="/trails/firsttrip", class="sub-word">第一回渡航</a>
-                              </li>
-                              <li class="sub-list">
-                                <a href="/trails/secondtrip", class="sub-word">第二回渡航</a>
+                                <a href="/trails/trip", class="sub-word">渡航</a>
                               </li>
                               <li class="sub-list">
                                 <a href="/trails/pr", class="sub-word">新聞・ラジオ</a>

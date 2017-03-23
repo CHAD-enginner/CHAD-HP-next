@@ -7,117 +7,97 @@
             %h1 CHAD's Trails
             %h3 学生団体CHADのこれまでの軌跡をご紹介します。
   .content-section-a
-  .container
-    .row
-      .col-lg-5.col-sm-6
-        %hr.section-heading-spacer/
-        .clearfix
-        %h2.section-heading
-          第一回渡航（スタディーツアー）
-          %br>/
-          First Trip In Cambodia
-        %p.lead
-          CHAD初の渡航は、カンボジアに
-          %br
-          スタディーツアーに行きました。
-        .learn-more_btn_wrapper
-          = link_to trails_firsttrip_path, class: "button change-border01" do
-            %span.change-border01__inner learn more
-      .col-lg-5.col-lg-offset-2.col-sm-6
-        = image_tag "image 1.jpg", class: "img-responsive", alt: ""
-.content-section-b
-  .container
-    .row
-      .col-lg-5.col-lg-offset-1.col-sm-push-6.col-sm-6
-        %hr.section-heading-spacer/
-        .clearfix
-        %h2.section-heading
-          第二回渡航（体育祭）
-          %br>/
-          Sports Festival
-        %p.lead
-          カンボジアのプノンペン大学で
-          %br
-          初めてのプロジェクトを行いました。
-        .learn-more_btn_wrapper
-          = link_to trails_secondtrip_path, class: "button change-border01" do
-            %span.change-border01__inner learn more
-      .col-lg-5.col-sm-pull-6.col-sm-6
-        = image_tag "dog.png", class: "img-responsive", alt: ""
-.content-section-a
-  .container
-    .row
-      .col-lg-5.col-sm-6
-        %hr.section-heading-spacer/
-        .clearfix
-        %h2.section-heading
-          京都新聞・KBSラジオ
-          %br
-          News Paper and Radio
-        %p.lead
-          CHADの活動が認められ
-          %br
-          新聞掲載と、ラジオに出演しました。
-        .learn-more_btn_wrapper
-          = link_to trails_pr_path, class: "button change-border01" do
-            %span.change-border01__inner learn more
-      .col-lg-5.col-lg-offset-2.col-sm-6
-        = image_tag "image 1.jpg", class: "img-responsive", alt: ""
-.content-section-b
-  .container
-    .row
-      .col-lg-5.col-lg-offset-1.col-sm-push-6.col-sm-6
-        %hr.section-heading-spacer/
-        .clearfix
-        %h2.section-heading
-          募金
-          %br>/
-          Fund Raising
-        %p.lead
-          去年から、四条烏丸付近で
-          %br
-          カンボジアへの支援を募っています。
-        .learn-more_btn_wrapper
-          = link_to trails_fundraising_path, class: "button change-border01" do
-            %span.change-border01__inner learn more
-      .col-lg-5.col-sm-pull-6.col-sm-6
-        = image_tag "dog.png", class: "img-responsive", alt: ""
-.content-section-a
-  .container
-    .row
-      .col-lg-5.col-sm-6
-        %hr.section-heading-spacer/
-        .clearfix
-        %h2.section-heading
-          クラウドファンディング
-          %br>/
-          Crowdfunding
-        %p.lead
-          去年の夏、カンボジア支援の活動費として
-          %br
-          クラウドファンディングで募金を募りました。
-        .learn-more_btn_wrapper
-          = link_to trails_crowdfunding_path, class: "button change-border01" do
-            %span.change-border01__inner learn more
-      .col-lg-5.col-lg-offset-2.col-sm-6
-        = image_tag "image 1.jpg", class: "img-responsive", alt: ""
-.content-section-b
-  .container
-    .row
-      .col-lg-5.col-lg-offset-1.col-sm-push-6.col-sm-6
-        %hr.section-heading-spacer/
-        .clearfix
-        %h2.section-heading
-          その他（講演など）
-          %br>/
-          Others
-        %p.lead
-          学内講演や、学外イベントなど
-          %br
-          CHADは様々な活動を行なっています。
-        .learn-more_btn_wrapper
-          = link_to trails_others_path, class: "button change-border01" do
-            %span.change-border01__inner learn more
-      .col-lg-5.col-sm-pull-6.col-sm-6
-        = image_tag "dog.png", class: "img-responsive", alt: ""
-
+    .container
+      .row
+        .col-lg-5.col-sm-6
+          %hr.section-heading-spacer/
+          .clearfix
+          %h2.section-heading
+            カンボジア渡航
+            %br>/
+            Trip In Cambodia
+          %p.lead
+            これまでに団体として、
+            %br
+            計5回、カンボジアに渡航しています。
+          .learn-more_btn_wrapper
+            = link_to trails_trip_path, class: "button change-border01" do
+              %span.change-border01__inner learn more
+        .col-lg-5.col-lg-offset-2.col-sm-6
+          = image_tag "image 1.jpg", class: "img-responsive", alt: ""
+  .content-section-b
+    .container
+      .row
+        .col-lg-5.col-lg-offset-1.col-sm-push-6.col-sm-6
+          %hr.section-heading-spacer/
+          .clearfix
+          %h2.section-heading
+            京都新聞・KBSラジオ
+            %br>/
+            News Paper and Radio
+          %p.lead
+            CHADの活動が認められ
+            %br
+            新聞掲載と、ラジオに出演しました。
+          .learn-more_btn_wrapper
+            = link_to trails_pr_path, class: "button change-border01" do
+              %span.change-border01__inner learn more
+        .col-lg-5.col-sm-pull-6.col-sm-6
+          = image_tag "dog.png", class: "img-responsive", alt: ""
+  .content-section-a
+    .container
+      .row
+        .col-lg-5.col-sm-6
+          %hr.section-heading-spacer/
+          .clearfix
+          %h2.section-heading
+            募金
+            %br
+            Fund Raising
+          %p.lead
+            去年から、四条烏丸付近で
+            %br
+            カンボジアへの支援を募っています。
+          .learn-more_btn_wrapper
+            = link_to trails_fundraising_path, class: "button change-border01" do
+              %span.change-border01__inner learn more
+        .col-lg-5.col-lg-offset-2.col-sm-6
+          = image_tag "image 1.jpg", class: "img-responsive", alt: ""
+  .content-section-b
+    .container
+      .row
+        .col-lg-5.col-lg-offset-1.col-sm-push-6.col-sm-6
+          %hr.section-heading-spacer/
+          .clearfix
+          %h2.section-heading
+            クラウドファンディング
+            %br>/
+            Crowdfunding
+          %p.lead
+            去年の夏、カンボジア支援の活動費として
+            %br
+            クラウドファンディングで募金を募りました。
+          .learn-more_btn_wrapper
+            = link_to trails_crowdfunding_path, class: "button change-border01" do
+              %span.change-border01__inner learn more
+        .col-lg-5.col-sm-pull-6.col-sm-6
+          = image_tag "dog.png", class: "img-responsive", alt: ""
+  .content-section-a
+    .container
+      .row
+        .col-lg-5.col-sm-6
+          %hr.section-heading-spacer/
+          .clearfix
+          %h2.section-heading
+            その他（講演など）
+            %br>/
+            Others
+          %p.lead
+            学内講演や、学外イベントなど
+            %br
+            CHADは様々な活動を行なっています。
+          .learn-more_btn_wrapper
+            = link_to trails_others_path, class: "button change-border01" do
+              %span.change-border01__inner learn more
+        .col-lg-5.col-lg-offset-2.col-sm-6
+          = image_tag "image 1.jpg", class: "img-responsive", alt: ""

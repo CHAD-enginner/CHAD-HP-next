@@ -20,9 +20,9 @@
             Members
           %p.lead
             総勢40人のメンバーで日々活動しています。
-  .actions-sports-university-intro-header
-    .actions-sports-university-intro-message
-      .university-box
+  .first-section-members-intro-header
+    .first-section-members-intro-message
+      .members-box
         %h1 一期生（創設メンバー）
         %h3 創設メンバーです。
   .content-section-a
@@ -40,13 +40,13 @@
             %br
             すごいね。
           .learn-more_btn_wrapper
-            = link_to kisei_users_path(@first.id), class: "button change-border01" do
+            = link_to kisei_users_path(@firstkisei.id), class: "button change-border01" do
               %span.change-border01__inner learn more
         .col-lg-5.col-lg-offset-2.col-sm-6
           = image_tag "image 1.jpg", class: "img-responsive", alt: ""
-  .actions-sports-elementary-intro-header
-    .actions-sports-elementary-intro-message
-      .elementary-box
+  .second-section-members-intro-header
+    .second-section-members-intro-message
+      .members-box
         %h1 二期生
         %h3 現在のCHADをまとめています。
   .content-section-a
@@ -64,13 +64,13 @@
             %br
             頑張って。
           .learn-more_btn_wrapper
-            = link_to kisei_users_path(@second.id), class: "button change-border01" do
+            = link_to kisei_users_path(@secondkisei.id), class: "button change-border01" do
               %span.change-border01__inner learn more
         .col-lg-5.col-lg-offset-2.col-sm-6
           = image_tag "image 1.jpg", class: "img-responsive", alt: ""
-  .actions-sports-university-intro-header
-    .actions-sports-university-intro-message
-      .university-box
+  .third-section-members-intro-header
+    .third-section-members-intro-message
+      .members-box
         %h1 三期生
         %h3 可愛い女の子ばっかりです。
   .content-section-a
@@ -88,7 +88,32 @@
             %br
             これからのCHADを担って行く存在です。
           .learn-more_btn_wrapper
-            = link_to kisei_users_path(@third.id), class: "button change-border01" do
+            = link_to kisei_users_path(@thirdkisei.id), class: "button change-border01" do
               %span.change-border01__inner learn more
         .col-lg-5.col-lg-offset-2.col-sm-6
           = image_tag "image 1.jpg", class: "img-responsive", alt: ""
+  .rupp-section-members-intro-header
+    .rupp-section-members-intro-message
+      .members-box
+        %h1 RUPP
+        %h3 CHADに欠かせない大切な存在です。
+  .content-section-a
+    .container
+      .row
+        .col-lg-5.col-sm-6.col-center
+          %hr.section-heading-spacer/
+          .clearfix
+          %h2.section-heading
+            RUPP
+            %br>/
+            cncvv
+          %p.lead
+            カンボジア、プノンペン大学日本語学科
+            %br
+            毎年、共にプロジェクトを行なっています。
+          .learn-more_btn_wrapper
+            = link_to kisei_users_path(@rupp.id), class: "button change-border01" do
+              %span.change-border01__inner learn more
+        .col-lg-5.col-lg-offset-2.col-sm-6
+          = image_tag "image 1.jpg", class: "img-responsive", alt: ""
+

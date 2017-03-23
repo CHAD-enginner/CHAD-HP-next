@@ -12,8 +12,7 @@ Rails.application.routes.draw do
   end
   get '/actions/sports',        to: 'sports#index'
   get '/actions/educations',    to: 'educations#index'
-  get '/trails/firsttrip',      to: 'firsttrips#index'
-  get '/trails/secondtrip',     to: 'secondtrips#index'
+  get '/trails/trip',           to: 'trips#index'
   get '/trails/pr',             to: 'prs#index'
   get '/trails/fundraising',    to: 'fundraisings#index'
   get '/trails/crowdfunding',   to: 'crowdfundings#index'
