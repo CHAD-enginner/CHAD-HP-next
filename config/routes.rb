@@ -7,10 +7,15 @@ Rails.application.routes.draw do
   resources :actions, only: [:index]
   resources :trails, only: [:index]
   resources :members, only: [:index]
-  resources :kisei do
+  resources :kisei, only: [:index] do
     resources :users, only: [:index]
   end
-  get '/actions/sports', to: 'sports#index'
-  get '/actions/educations', to: 'educations#index'
+  get '/actions/sports',        to: 'sports#index'
+  get '/actions/educations',    to: 'educations#index'
+  get '/trails/firsttrip',      to: 'firsttrips#index'
+  get '/trails/secondtrip',     to: 'secondtrips#index'
+  get '/trails/pr',             to: 'prs#index'
+  get '/trails/fundraising',    to: 'fundraisings#index'
+  get '/trails/crowdfunding',   to: 'crowdfundings#index'
+  get 'trails/others',          to: 'others#index'
 end
- 

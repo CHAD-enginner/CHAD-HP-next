@@ -1,20 +1,8 @@
-.actions-bar {
+.actions-bar, .members-bar, .trails-bar {
   position: relative;
 }
 
-.actions-sub {
-  width: 100%;
-  background-color: #f8f8f8;
-  position: absolute;
-  top: 50px;
-  padding: 0;
-}
-
-.members-bar {
-  position: relative;
-}
-
-.members-sub {
+.actions-sub, .members-sub, .trails-sub {
   width: 100%;
   background-color: #f8f8f8;
   position: absolute;
@@ -25,7 +13,7 @@
 .sub-list {
   list-style: none;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .sub-word {

@@ -22,6 +22,27 @@ $(document).on('turbolinks:load', function(){
                               </li>
                             </div>`;
 
+    var trails_sub_html = `<div class='a'>
+                              <li class="sub-list">
+                                <a href="/trails/firsttrip", class="sub-word">第一回渡航</a>
+                              </li>
+                              <li class="sub-list">
+                                <a href="/trails/secondtrip", class="sub-word">第二回渡航</a>
+                              </li>
+                              <li class="sub-list">
+                                <a href="/trails/pr", class="sub-word">新聞・ラジオ</a>
+                              </li>
+                              <li class="sub-list">
+                                <a href="/trails/fundraising", class="sub-word">募金</a>
+                              </li>
+                              <li class="sub-list">
+                                <a href="/trails/crowdfunding", class="sub-word">クラウドファンディング</a>
+                              </li>
+                              <li class="sub-list">
+                                <a href="/trails/others", class="sub-word">その他</a>
+                              </li>
+                           </div>`;
+
     $(".actions-bar").hover(function(){
       $(".actions-sub").append(actions_sub_html);
     },
@@ -35,5 +56,21 @@ $(document).on('turbolinks:load', function(){
     function(){
       $(".a").remove();
     });
+
+    $(".trails-bar").hover(function(){
+      $(".trails-sub").append(trails_sub_html);
+    },
+    function(){
+      $(".a").remove();
+    });
   });
 });
+
+
+
+
+
+
+
+
+
