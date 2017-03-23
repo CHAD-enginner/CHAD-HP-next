@@ -1,0 +1,2 @@
+module FirsttripsHelper
+end
