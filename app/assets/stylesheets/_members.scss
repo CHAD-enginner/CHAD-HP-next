@@ -9,7 +9,7 @@
     position: relative; /*親要素をrelativeで指定してあげると、子要素の */
 }
 
-.members-intro-header::before{
+.members-intro-header::before, .first-section-members-intro-header::before, .second-section-members-intro-header::before, .third-section-members-intro-header::before, .rupp-section-members-intro-header::before {
     /* 透過した黒を重ねる */
     background-color: rgba(0,0,0,0.5);
     /* どの範囲に重ねるかを指定 */
@@ -21,4 +21,42 @@
     content: ' ';
 }
 
+.first-section-members-intro-header, .second-section-members-intro-header, .third-section-members-intro-header, .rupp-section-members-intro-header {
+    min-height: 200px;
+    // max-height: 50%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background-size: cover;
+    position: relative; /*親要素をrelativeで指定してあげると、子要素の */
+}
+
+.first-section-members-intro-header {
+    background: url(university.png) no-repeat center center;
+}
+
+.second-section-members-intro-header {
+    background: url(university.png) no-repeat center center;
+}
+
+.third-section-members-intro-header {
+    background: url(university.png) no-repeat center center;
+}
+
+.rupp-section-members-intro-header {
+    background: url(university.png) no-repeat center center;
+}
+
+
+.members-box {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: ' ';
+  width: 100%;
+  text-align: center;
+}
 
