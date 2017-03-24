@@ -1123,6 +1123,8 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  border-radius: 50%;
+  border: 2px solid #eee;
 }
 .img-rounded {
   border-radius: 6px;
@@ -1586,6 +1588,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 30px;
 }
 @media (min-width: 768px) {
   .container {
@@ -2245,7 +2248,7 @@ pre code {
     margin-left: 25%;
   }
   .col-lg-offset-2 {
-    margin-left: 16.66666667%;
+    margin-left: 11.66666667%;
   }
   .col-lg-offset-1 {
     margin-left: 8.33333333%;

@@ -1,0 +1,46 @@
+.introductions-intro-header
+  .container
+    .row
+      .col-lg-12
+        .intro-message
+          %h1 About CHAD
+          %h3 学生団体CHADについてご紹介します。
+.content-section-a
+  .container
+    .row
+      .col-lg-5.col-sm-6
+        %hr.section-heading-spacer/
+        .clearfix
+        %h2.section-heading
+          CHADとは
+          %br
+          About CHAD
+        %p.lead
+          主に、カンボジアで教育支援を行なっています。あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+      .col-lg-5.col-lg-offset-2.col-sm-6
+        = image_tag "image 1.jpg", class: "img-responsive", alt: ""
+  .content-section-introduction
+    .container
+      .row.aaa
+        .col-lg-13.col-sm-14.wrapper-image-box
+          .image-box
+            .introductions-image{style: "background: url(/assets/intro1.jpg); background-size: cover; margin: 0 auto;"}
+            %h3
+              = link_to "理念・活動目的", missions_path, class: "introductions-name"
+        .col-lg-13.col-sm-14.wrapper-image-box
+          .image-box
+            .introductions-image{style: "background: url(/assets/intro2.jpg); background-size: cover; margin: 0 auto;"}
+            %h3
+              = link_to "活動内容", actions_path, class: "introductions-name"
+        .col-lg-13.col-sm-14.wrapper-image-box
+          .image-box
+            .introductions-image{style: "background: url(/assets/intro3.jpg); background-size: cover; margin: 0 auto;"}
+            %h3
+              = link_to "これまでの軌跡", trails_path, class: "introductions-name"
+        .col-lg-13.col-sm-14.wrapper-image-box
+          .image-box
+            .introductions-image{style: "background: url(/assets/intro4.jpg); background-size: cover; margin: 0 auto;"}
+            %h3
+              = link_to "メンバー", members_path, class: "introductions-name"
+
+
