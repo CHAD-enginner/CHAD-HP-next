@@ -36,7 +36,7 @@ h6 {
     /*padding-bottom: 50px;*/
     text-align: center;
     color: #f8f8f8;
-    background: url(chads.jpg) no-repeat center center;
+    background: url(intro0.jpg) no-repeat center center;
     background-size: cover;
     position: relative; /*親要素をrelativeで指定してあげると、子要素の */
 }
@@ -107,11 +107,11 @@ h6 {
 }
 
 .content-section-a {
-    padding: 50px 0;
+    // padding: 50px 0;
 }
 
 .content-section-b {
-    padding: 50px 0;
+    // padding: 50px 0;
     border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #e7e7e7;
     background-color: #f8f8f8;
@@ -128,3 +128,10 @@ h6 {
     border-top: 3px solid #e7e7e7;
 }
 
+.intro-revise {
+    // margin-left: 50px;
+}
+
+.w {
+    margin: 0 20px;
+}

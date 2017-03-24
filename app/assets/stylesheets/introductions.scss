@@ -1,3 +1,90 @@
-// Place all the styles related to the introductions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.introductions-intro-header {
+    min-height: 96%;
+    padding-top: 50px;
+    /*padding-bottom: 50px;*/
+    text-align: center;
+    color: #f8f8f8;
+    background: url(introaaa.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative; /*親要素をrelativeで指定してあげると、子要素の */
+}
+
+.introductions-intro-header::before{
+    /* 透過した黒を重ねる */
+    background-color: rgba(0,0,0,0.5);
+    /* どの範囲に重ねるかを指定 */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: ' ';
+}
+
+.content-section-introduction {
+    padding: 50px 0;
+    margin-top: 70px;
+    border-top: 2px solid #eee;
+}
+
+.wrapper-image-box {
+    margin: 20px;
+}
+.image-box {
+    text-align: center;
+}
+
+.introductions-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; //画像が丸くなる
+    //画像の周りを線で囲って、色をつけている。//
+    border: 2px solid #eee;
+    position: relative;
+}
+
+.introductions-image::before{
+    /* 透過した黒を重ねる */
+    background-color: rgba(0,0,0,0.5);
+    /* どの範囲に重ねるかを指定 */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: ' ';
+    border-radius: 50%;
+}
+
+.introductions-image:hover::before {
+  background-color: rgba(0,0,0,0.0);
+}
+
+.introductions-name{
+  position: relative;
+  display: inline-block;
+  // font-size: 2em;
+}
+
+.introductions-name:before{
+  position: absolute;
+  top: 1.3em;
+  left: 0;
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 2px;
+  background: #253340;
+  transition: 0.5s;
+}
+
+.introductions-name:hover:before{
+  width: 100%;
+}
+
+.introductions-name {
+  color: #777;
+}
+.introductions-name:hover {
+  color: #253340;
+}
