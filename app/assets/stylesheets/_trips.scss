@@ -1,0 +1,22 @@
+.trips-intro-header {
+    min-height: 96%;
+    padding-top: 50px;
+    /*padding-bottom: 50px;*/
+    text-align: center;
+    color: #f8f8f8;
+    background: url(trip-intro.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative; /*親要素をrelativeで指定してあげると、子要素の */
+}
+
+.trips-intro-header::before{
+    /* 透過した黒を重ねる */
+    background-color: rgba(0,0,0,0.5);
+    /* どの範囲に重ねるかを指定 */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: ' ';
+}
