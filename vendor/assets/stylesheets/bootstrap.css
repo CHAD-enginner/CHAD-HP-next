@@ -1605,6 +1605,28 @@ pre code {
     width: 1170px;
   }
 }
+
+.container-intro {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container-intro {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container-intro {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-intro {
+    width: 1170px;
+  }
+}
 .container-fluid {
   padding-right: 15px;
   padding-left: 15px;
