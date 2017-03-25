@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
   root 'chads#index'
   resources :introductions, only: [:index]
   resources :missions, only: [:index]
@@ -11,6 +9,24 @@ Rails.application.routes.draw do
   resources :kisei, only: [:index] do
     resources :users, only: [:index]
   end
+
+  namespace :admin do
+    resources :adkiseis do
+      resources :admin_users
+    end
+  end
+
+  namespace :admin do
+    resources :adcontacts
+  end
+
+  namespace :admin do
+    root 'addashboard#index'
+  end
+
+
+
+
   get '/actions/sports',        to: 'sports#index'
   get '/actions/educations',    to: 'educations#index'
   get '/trails/trip',           to: 'trips#index'
