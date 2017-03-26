@@ -7,12 +7,14 @@
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %meta{:content => "", :name => "description"}/
     %meta{:content => "", :name => "author"}/
-    %title 学生団体CHAD管理者システム
+    %title 期生一覧
+    / Bootstrap Core CSS
     = stylesheet_link_tag    'font-awesome.css', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag    'bootstrap.css', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag    'metisMenu.css', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag    'sb-admin-2.css', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag    'morris.css', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     #wrapper
       / Navigation
@@ -27,21 +29,21 @@
         / /.navbar-header
         %ul.nav.navbar-top-links.navbar-right
           %li.dropdown
-            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
               %i.fa.fa-user.fa-fw
               %i.fa.fa-caret-down
             %ul.dropdown-menu.dropdown-user
               %li
-                %a{:href => "#"}
+                %a{href: "#"}
                   %i.fa.fa-user.fa-fw
                   プロフィール
               %li
-                %a{:href => "#"}
+                %a{href: "#"}
                   %i.fa.fa-gear.fa-fw
                   設定
               %li.divider
               %li
-                %a{:href => "login.html"}
+                %a{href: "login.html"}
                   %i.fa.fa-sign-out.fa-fw
                   ログアウト
             / /.dropdown-user
@@ -58,26 +60,26 @@
                       %i.fa.fa-search
                 / /input-group
               %li
-                %a{:href => "/admin"}
+                %a{href: "index.html"}
                   %i.fa.fa-dashboard.fa-fw
                   Dashboard
               %li
-                %a{:href => "/admin/kiseis"}
+                %a{href: "/admin/kiseis"}
                   %i.fa.fa-bar-chart-o.fa-fw
                   期生
                   %span.fa.arrow
                 / %ul.nav.nav-second-level
                 /   %li
-                /     %a{:href => "flot.html"} Flot Charts
+                /     %a{href: "flot.html"} Flot Charts
                 /   %li
-                /     %a{:href => "morris.html"} Morris.js Charts
+                /     %a{href: "morris.html"} Morris.js Charts
                 / /.nav-second-level
               %li
-                %a{:href => "/admin/users"}
+                %a{href: "/admin/users"}
                   %i.fa.fa-table.fa-fw
                   メンバー
               %li
-                %a{:href => "/admin/contacts"}
+                %a{href: "/admin/contacts"}
                   %i.fa.fa-edit.fa-fw
                   お問い合わせ
                 / /.nav-second-level
@@ -86,52 +88,31 @@
       #page-wrapper
         .row
           .col-lg-12
-            %h1.page-header Dashboard
-          / /.col-lg-12
-        / /.row
+            %h1.page-header 削除確認
         .row
-          .col-lg-3.col-md-6
-            .panel.panel-primary
+          .col-lg-12
+            .panel.panel-default
               .panel-heading
-                .row
-                  .col-xs-3
-                    %i.fa.fa-comments.fa-5x
-                  .col-xs-9.text-right
-                    .huge 26
-                    %div 期生
-              %a{:href => "#"}
-                .panel-footer
-                  %span.pull-left View Details
-                  %span.pull-right
-                    %i.fa.fa-arrow-circle-right
-                  .clearfix
-          .col-lg-3.col-md-6
-            .panel.panel-green
-              .panel-heading
-                .row
-                  .col-xs-3
-                    %i.fa.fa-tasks.fa-5x
-                  .col-xs-9.text-right
-                    .huge 12
-                    %div メンバー
-              %a{:href => "#"}
-                .panel-footer
-                  %span.pull-left View Details
-                  %span.pull-right
-                    %i.fa.fa-arrow-circle-right
-                  .clearfix
-          .col-lg-3.col-md-6
-            .panel.panel-yellow
-              .panel-heading
-                .row
-                  .col-xs-3
-                    %i.fa.fa-shopping-cart.fa-5x
-                  .col-xs-9.text-right
-                    .huge 124
-                    %div お問い合わせ
-              %a{:href => "#"}
-                .panel-footer
-                  %span.pull-left View Details
-                  %span.pull-right
-                    %i.fa.fa-arrow-circle-right
-                  .clearfix
+                Kiseis DataTables
+              / /.panel-heading
+              .panel-body
+                %table#dataTables-example.table.table-striped.table-bordered.table-hover{width: "100%"}
+                  %thead
+                    %tr
+                      %th 期生
+                      %th 紹介文
+                      %th 作成日時
+                      %th 更新日時
+                  %tbody
+                    %tr.odd.gradeX
+                    %td
+                      =@adkisei.name
+                    %td
+                      =@adkisei.text
+                    %td
+                      =@adkisei.created_at
+                    %td
+                      =@adkisei.updated_at
+        .well
+          = link_to "/admin/adkiseis/#{@adkisei.id}", method: :delete, confirm: "are" do
+            .btn.btn-default.btn-lg.btn-block 削除

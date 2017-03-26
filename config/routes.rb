@@ -40,5 +40,5 @@ Rails.application.routes.draw do
   get '/admin/users',           to: 'admin/adusers#index'
   get '/admin/contacts',        to: 'admin/adcontacts#index'
   get '/admin/kiseis/new',      to: 'admin/adkiseis#new'
-  get '/admin/users/new', to: 'admin/adusers#new'
+  get '/admin/users/new',       to: 'admin/adusers#new'
 end
