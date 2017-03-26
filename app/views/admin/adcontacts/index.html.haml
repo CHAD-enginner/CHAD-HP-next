@@ -1,0 +1,174 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    %title メンバー一覧
+    / Bootstrap Core CSS
+    = stylesheet_link_tag    'font-awesome.css', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'bootstrap.css', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'metisMenu.css', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'sb-admin-2.css', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'morris.css', media: 'all', 'data-turbolinks-track': 'reload'
+  %body
+    #wrapper
+      / Navigation
+      %nav.navbar.navbar-default.navbar-static-top{:role => "navigation", :style => "margin-bottom: 0"}
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand 学生団体CHAD管理システム
+        / /.navbar-header
+        %ul.nav.navbar-top-links.navbar-right
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              %i.fa.fa-user.fa-fw
+              %i.fa.fa-caret-down
+            %ul.dropdown-menu.dropdown-user
+              %li
+                %a{href: "#"}
+                  %i.fa.fa-user.fa-fw
+                  プロフィール
+              %li
+                %a{href: "#"}
+                  %i.fa.fa-gear.fa-fw
+                  設定
+              %li.divider
+              %li
+                %a{href: "login.html"}
+                  %i.fa.fa-sign-out.fa-fw
+                  ログアウト
+            / /.dropdown-user
+          / /.dropdown
+        / /.navbar-top-links
+        .navbar-default.sidebar{:role => "navigation"}
+          .sidebar-nav.navbar-collapse
+            %ul#side-menu.nav
+              %li.sidebar-search
+                .input-group.custom-search-form
+                  %input.form-control{:placeholder => "Search...", :type => "text"}/
+                  %span.input-group-btn
+                    %button.btn.btn-default{:type => "button"}
+                      %i.fa.fa-search
+                / /input-group
+              %li
+                %a{href: "/admin"}
+                  %i.fa.fa-dashboard.fa-fw
+                  Dashboard
+              %li
+                %a{href: "/admin/kiseis"}
+                  %i.fa.fa-bar-chart-o.fa-fw
+                  期生
+                  %span.fa.arrow
+                / %ul.nav.nav-second-level
+                /   %li
+                /     %a{href: "flot.html"} Flot Charts
+                /   %li
+                /     %a{href: "morris.html"} Morris.js Charts
+                / /.nav-second-level
+              %li
+                %a{href: "tables.html"}
+                  %i.fa.fa-table.fa-fw
+                  メンバー
+              %li
+                %a{href: "forms.html"}
+                  %i.fa.fa-edit.fa-fw
+                  お問い合わせ
+                / /.nav-second-level
+          / /.sidebar-collapse
+        / /.navbar-static-side
+      #page-wrapper
+        .row
+          .col-lg-12
+            %h1.page-header お問い合わせ一覧
+          / /.col-lg-12
+        / /.row
+        .row
+          .col-lg-12
+            .panel.panel-default
+              .panel-heading
+                Contacts DataTables
+              / /.panel-heading
+              .panel-body
+                %table#dataTables-example.table.table-striped.table-bordered.table-hover{width: "100%"}
+                  %thead
+                    %tr
+                      %th 名前
+                      %th メール
+                      %th 大学・企業
+                      %th 学年
+                      %th 問い合わせ内容
+                      %th 作成日時
+                      %th 更新日時
+                  %tbody
+                    %tr.odd.gradeX
+                      %td 金正朋也xxxxxxxxxxxxxx
+                      %td 一期生
+                      %td mhtnim1023@gmail.com
+                      %td.center 大阪府山sな試験しょんとんcいふぇvfゔぇfvべん
+                      %td.center 元代表っっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっx
+                      %td.center っっっっっっっっっっっっっっっっっっs
+                      %td.center んcいvにうっvscdfrvrghthgdfdc
+                    %tr.even.gradeC
+                      %td Trident
+                      %td Internet Explorer 5.0
+                      %td Win 95+
+                      %td.center 5
+                      %td.center
+                      %td.center
+                      %td.center
+                    %tr.odd.gradeA
+                      %td Trident
+                      %td Internet Explorer 5.5
+                      %td Win 95+
+                      %td.center 5
+                      %td.center
+                      %td.center
+                      %td.center
+                    %tr.even.gradeA
+                      %td Trident
+                      %td Internet Explorer 6
+                      %td Win 98+
+                      %td.center 6
+                      %td.center
+                      %td.center
+                      %td.center
+                    %tr.odd.gradeA
+                      %td Trident
+                      %td Internet Explorer 7
+                      %td Win XP SP2+
+                      %td.center 7
+                      %td.center
+                      %td.center
+                      %td.center
+                    %tr.even.gradeA
+                      %td Trident
+                      %td AOL browser (AOL desktop)
+                      %td Win XP
+                      %td.center 6
+                      %td.center
+                      %td.center
+                      %td.center
+                    %tr.gradeA
+                      %td Gecko
+                      %td Firefox 1.0
+                      %td Win 98+ / OSX.2+
+                      %td.center 1
+                      %td.center
+                      %td.center
+                      %td.center
+                    %tr.gradeA
+                      %td Gecko
+                      %td Firefox 1.5
+                      %td Win 98+ / OSX.2+
+                      %td.center 1
+                      %td.center
+                      %td.center
+                      %td.center.8
