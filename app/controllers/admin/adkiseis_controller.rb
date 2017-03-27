@@ -9,7 +9,7 @@ class Admin::AdkiseisController < Admin::ApplicationController
   end
 
   def create
-    @adkisei = Adkisei.new(kisei_params)
+    @adkisei = Adkisei.new(adkisei_params)
     if @adkisei.save
       redirect_to admin_kiseis_path
     else
@@ -33,7 +33,7 @@ class Admin::AdkiseisController < Admin::ApplicationController
 
   def update
     @adkisei = Adkisei.find(params[:id])
-    if @adkisei.update(kisei_params)
+    if @adkisei.update(adkisei_params)
       redirect_to admin_kiseis_path
     else
 
@@ -46,7 +46,7 @@ class Admin::AdkiseisController < Admin::ApplicationController
 
   private
 
-  def kisei_params
+  def adkisei_params
     params.require(:adkisei).permit(:name, :text, :backimage)
   end
 

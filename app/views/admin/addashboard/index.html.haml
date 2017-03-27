@@ -58,11 +58,11 @@
                       %i.fa.fa-search
                 / /input-group
               %li
-                %a{:href => "/admin"}
+                =link_to admin_root_path do
                   %i.fa.fa-dashboard.fa-fw
                   Dashboard
               %li
-                %a{:href => "/admin/kiseis"}
+                =link_to admin_kiseis_path do
                   %i.fa.fa-bar-chart-o.fa-fw
                   期生
                   %span.fa.arrow
@@ -73,11 +73,11 @@
                 /     %a{:href => "morris.html"} Morris.js Charts
                 / /.nav-second-level
               %li
-                %a{:href => "/admin/users"}
+                =link_to admin_users_path do
                   %i.fa.fa-table.fa-fw
                   メンバー
               %li
-                %a{:href => "/admin/contacts"}
+                =link_to admin_contacts_path do
                   %i.fa.fa-edit.fa-fw
                   お問い合わせ
                 / /.nav-second-level
@@ -97,9 +97,10 @@
                   .col-xs-3
                     %i.fa.fa-comments.fa-5x
                   .col-xs-9.text-right
-                    .huge 26
+                    .huge
+                      =@adkiseis.length
                     %div 期生
-              %a{:href => "#"}
+              =link_to admin_kiseis_path do
                 .panel-footer
                   %span.pull-left View Details
                   %span.pull-right
@@ -112,9 +113,10 @@
                   .col-xs-3
                     %i.fa.fa-tasks.fa-5x
                   .col-xs-9.text-right
-                    .huge 12
+                    .huge
+                      =@adusers.length
                     %div メンバー
-              %a{:href => "#"}
+              =link_to admin_users_path do
                 .panel-footer
                   %span.pull-left View Details
                   %span.pull-right
@@ -127,9 +129,10 @@
                   .col-xs-3
                     %i.fa.fa-shopping-cart.fa-5x
                   .col-xs-9.text-right
-                    .huge 124
+                    .huge
+                      =@adcontacts.length
                     %div お問い合わせ
-              %a{:href => "#"}
+              =link_to admin_contacts_path do
                 .panel-footer
                   %span.pull-left View Details
                   %span.pull-right

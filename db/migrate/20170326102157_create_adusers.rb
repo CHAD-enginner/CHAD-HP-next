@@ -6,7 +6,7 @@ class CreateAdusers < ActiveRecord::Migration[5.0]
       t.string :adress
       t.string :phone
       t.string :avator
-      t.references :kisei
+      t.references :adkisei
       t.string :role
       t.timestamps
     end

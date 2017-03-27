@@ -58,11 +58,11 @@
                       %i.fa.fa-search
                 / /input-group
               %li
-                %a{href: "index.html"}
+                =link_to admin_root_path do
                   %i.fa.fa-dashboard.fa-fw
                   Dashboard
               %li
-                %a{href: "/admin/kiseis"}
+                =link_to admin_kiseis_path do
                   %i.fa.fa-bar-chart-o.fa-fw
                   期生
                   %span.fa.arrow
@@ -73,11 +73,11 @@
                 /     %a{href: "morris.html"} Morris.js Charts
                 / /.nav-second-level
               %li
-                %a{href: "/admin/users"}
+                =link_to admin_users_path do
                   %i.fa.fa-table.fa-fw
                   メンバー
               %li
-                %a{href: "/admin/contacts"}
+                =link_to admin_contacts_path do
                   %i.fa.fa-edit.fa-fw
                   お問い合わせ
                 / /.nav-second-level

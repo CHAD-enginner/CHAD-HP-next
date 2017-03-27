@@ -11,9 +11,11 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :adkiseis do
-      resources :admin_users
-    end
+    resources :adkiseis
+  end
+
+  namespace :admin do
+    resources :adusers
   end
 
   namespace :admin do

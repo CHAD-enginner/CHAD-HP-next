@@ -13,6 +13,7 @@
     = stylesheet_link_tag    'metisMenu.css', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag    'sb-admin-2.css', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag    'morris.css', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     #wrapper
       / Navigation
@@ -104,7 +105,7 @@
                       .form-group
                         =f.label :名前
                         =f.text_field :name, placeholder: "", class: "form-control"
-                        .form-group
+                      .form-group
                         =f.label :役割
                         =f.text_field :role, placeholder: "", class: "form-control"
                       .form-group

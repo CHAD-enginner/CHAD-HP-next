@@ -57,11 +57,11 @@ ActiveRecord::Schema.define(version: 20170326102157) do
     t.string   "adress"
     t.string   "phone"
     t.string   "avator"
-    t.integer  "kisei_id"
+    t.integer  "adkisei_id"
     t.string   "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["kisei_id"], name: "index_adusers_on_kisei_id", using: :btree
+    t.index ["adkisei_id"], name: "index_adusers_on_adkisei_id", using: :btree
   end
 
   create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
