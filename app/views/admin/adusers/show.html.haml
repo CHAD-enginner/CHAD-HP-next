@@ -9,11 +9,12 @@
     %meta{:content => "", :name => "author"}/
     %title 期生一覧
     / Bootstrap Core CSS
-    = stylesheet_link_tag    'font-awesome.css', media: 'all', 'data-turbolinks-track': 'reload'
-    = stylesheet_link_tag    'bootstrap.css', media: 'all', 'data-turbolinks-track': 'reload'
-    = stylesheet_link_tag    'metisMenu.css', media: 'all', 'data-turbolinks-track': 'reload'
-    = stylesheet_link_tag    'sb-admin-2.css', media: 'all', 'data-turbolinks-track': 'reload'
-    = stylesheet_link_tag    'morris.css', media: 'all', 'data-turbolinks-track': 'reload'
+    / = stylesheet_link_tag    'font-awesome.css', media: 'all', 'data-turbolinks-track': 'reload'
+    / = stylesheet_link_tag    'bootstrap.css', media: 'all', 'data-turbolinks-track': 'reload'
+    / = stylesheet_link_tag    'metisMenu.css', media: 'all', 'data-turbolinks-track': 'reload'
+    / = stylesheet_link_tag    'sb-admin-2.css', media: 'all', 'data-turbolinks-track': 'reload'
+    / = stylesheet_link_tag    'morris.css', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     #wrapper
@@ -67,7 +68,6 @@
                 =link_to admin_kiseis_path do
                   %i.fa.fa-bar-chart-o.fa-fw
                   期生
-                  %span.fa.arrow
                 / %ul.nav.nav-second-level
                 /   %li
                 /     %a{href: "flot.html"} Flot Charts
@@ -88,7 +88,8 @@
       #page-wrapper
         .row
           .col-lg-12
-            %h1.page-header 削除確認
+            %h1.page-header 詳細
+            .aduser_avator{{style: "background: url(#{@aduser.avator}) no-repeat center center; background-size: cover;"}}
         .row
           .col-lg-12
             .panel.panel-default
@@ -119,6 +120,6 @@
                       =@aduser.adress
                     %td
                       =@aduser.phone
-        .well
-          = link_to "/admin/adusers/#{@aduser.id}", method: :delete, confirm: "are" do
-            .btn.btn-default.btn-lg.btn-block 削除
+        = link_to "/admin/adusers/#{@aduser.id}", method: :delete, confirm: "are" do
+          .well
+            .btn.btn-default.btn-lg.btn-block.delete-btn 削除

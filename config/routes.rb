@@ -15,7 +15,11 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :adusers
+    resources :adusers do
+      collection do
+        get 'search'
+      end
+    end
   end
 
   namespace :admin do

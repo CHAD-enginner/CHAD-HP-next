@@ -9,11 +9,8 @@
     %meta{:content => "", :name => "author"}/
     %title 期生一覧
     / Bootstrap Core CSS
-    = stylesheet_link_tag    'font-awesome.css', media: 'all', 'data-turbolinks-track': 'reload'
-    = stylesheet_link_tag    'bootstrap.css', media: 'all', 'data-turbolinks-track': 'reload'
-    = stylesheet_link_tag    'metisMenu.css', media: 'all', 'data-turbolinks-track': 'reload'
-    = stylesheet_link_tag    'sb-admin-2.css', media: 'all', 'data-turbolinks-track': 'reload'
-    = stylesheet_link_tag    'morris.css', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     #wrapper
       / Navigation
@@ -66,7 +63,6 @@
                 =link_to admin_kiseis_path do
                   %i.fa.fa-bar-chart-o.fa-fw
                   期生
-                  %span.fa.arrow
                 / %ul.nav.nav-second-level
                 /   %li
                 /     %a{href: "flot.html"} Flot Charts
@@ -122,5 +118,5 @@
                       %td.center
                         =link_to root_path, class: "edit-btn", style: "width: 50%; height: 100%; display: block; float: left;" do
                           編集
-                        =link_to root_path, class: "delete-btn", style: "width: 50%; height: 100%; display: block; float: left;" do
+                        =link_to root_path, class: "detail-btn", style: "width: 50%; height: 100%; display: block; float: left;" do
                           削除

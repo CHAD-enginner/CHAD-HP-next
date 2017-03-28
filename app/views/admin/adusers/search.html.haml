@@ -7,7 +7,8 @@
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %meta{:content => "", :name => "description"}/
     %meta{:content => "", :name => "author"}/
-    %title SB Admin 2 - Bootstrap Admin Theme
+    %title 期生一覧
+    / Bootstrap Core CSS
     = stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
@@ -55,11 +56,11 @@
                       %i.fa.fa-search
                 / /input-group
               %li
-                %a{href: "index.html"}
+                =link_to admin_root_path do
                   %i.fa.fa-dashboard.fa-fw
                   Dashboard
               %li
-                %a{href: "/admin/kiseis"}
+                =link_to admin_kiseis_path do
                   %i.fa.fa-bar-chart-o.fa-fw
                   期生
                 / %ul.nav.nav-second-level
@@ -69,11 +70,11 @@
                 /     %a{href: "morris.html"} Morris.js Charts
                 / /.nav-second-level
               %li
-                %a{href: "/admin/users"}
+                =link_to admin_users_path do
                   %i.fa.fa-table.fa-fw
                   メンバー
               %li
-                %a{href: "/admin/contacts"}
+                =link_to admin_contacts_path do
                   %i.fa.fa-edit.fa-fw
                   お問い合わせ
                 / /.nav-second-level
@@ -82,25 +83,60 @@
       #page-wrapper
         .row
           .col-lg-12
-            %h1.page-header 期生編集
+            %h1.page-header メンバー一覧
+        =link_to new_admin_aduser_path do
+          .well
+            .btn.btn-default.btn-lg.btn-block
+              メンバー作成
+        .well
+          =form_tag(search_admin_adusers_path, method: "GET") do
+            .search-box
+              =label_tag "絞り込み （期生・名前で検索できます。）"
+            .search-box
+              =collection_select :aduser, :adkisei_id, @adkiseis, :id, :name, {include_blank: true}, {class: "form-control"}
+            .search-box
+              =text_field :aduser, :name, {class: "form-control", placeholder: "名前"}
+            .search-btn
+              =submit_tag "絞り込み", class: "search-submit-btn"
           / /.col-lg-12
         / /.row
         .row
           .col-lg-12
             .panel.panel-default
               .panel-heading
-                編集画面です。編集しない場合はそのまま「編集」ボタンを押してください。
+                Kiseis DataTables
+              / /.panel-heading
               .panel-body
-                .row
-                  .col-lg-6
-                    =form_for [:admin, @adkisei ] do |f|
-                      .form-group
-                        =f.label :期生
-                        = f.text_field :name, placeholder: "例）一期生", class: "form-control"
-                      .form-group
-                        =f.label :紹介文
-                        =f.text_area :text, placeholder: "例）僕たち一期生は学生団体CHADを創設しました。", class: "form-control"
-                      .form-group
-                        =f.label :背景画像
-                        =f.file_field :backimage
-                      =f.submit "編集", class: "btn btn-default" #classを複数指定する場合はこのようにする。
+                %table#dataTables-example.table.table-striped.table-bordered.table-hover{width: "100%"}
+                  %thead
+                    %tr
+                      %th 期生
+                      %th 名前
+                      %th 役割
+                      %th メール
+                      %th 住所
+                      %th 電話番号
+                      %th 設定
+                  %tbody
+                  -if (@adusers.nil?) #controllerから送られて来た値がnillの場合は下のようにeachで出せないのでエラーが起こってしまう、、なので条件分岐でnillの場合は何も表示させないような実装にしている。
+                  -else
+                    -@adusers.each do |aduser|   #@adusersの中身が一つの場合でも、値は配列型で送られてくるのでeachで出してあげる必要がある。
+                      %tr.odd.gradeX
+                        %td
+                          =aduser.adkisei.name
+                        %td
+                          =aduser.name
+                        %td
+                          =aduser.role
+                        %td
+                          =aduser.email
+                        %td
+                          =aduser.adress
+                        %td
+                          =aduser.phone
+                        %td.center
+                          =link_to edit_admin_aduser_path(aduser.id), class: "edit-btn", style: "width: 50%; height: 100%; display: block; float: left;" do
+                            編集
+                          =link_to admin_aduser_path(aduser.id), class: "detail-btn", style: "width: 50%; height: 100%; display: block; float: left;" do
+                            削除
+
