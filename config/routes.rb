@@ -11,8 +11,14 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :adkiseis do
-      resources :admin_users
+    resources :adkiseis
+  end
+
+  namespace :admin do
+    resources :adusers do
+      collection do
+        get 'search'
+      end
     end
   end
 
@@ -34,4 +40,11 @@ Rails.application.routes.draw do
   get '/trails/fundraising',    to: 'fundraisings#index'
   get '/trails/crowdfunding',   to: 'crowdfundings#index'
   get 'trails/others',          to: 'others#index'
+
+#------以下、admin側のパス-------#
+  get '/admin/kiseis',          to: 'admin/adkiseis#index'
+  get '/admin/users',           to: 'admin/adusers#index'
+  get '/admin/contacts',        to: 'admin/adcontacts#index'
+  get '/admin/kiseis/new',      to: 'admin/adkiseis#new'
+  get '/admin/users/new',       to: 'admin/adusers#new'
 end

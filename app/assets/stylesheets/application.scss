@@ -25,6 +25,9 @@
 @import "sb-admin-2";
 @import "morris";
 @import "dataTables.responsive";
+@import "adcommon";
+@import "adusers";
+@import "adkiseis";
 
 //cssの拡張子を一括でsccs拡張子に変換してくれるコマンドが存在するので、手動で変換せずにターミネルで変換する！
 //find app/assets -name *.css | while read file; do mv "$file" "${file%%.css}.scss"; done
