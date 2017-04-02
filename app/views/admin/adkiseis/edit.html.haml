@@ -21,29 +21,6 @@
             %span.icon-bar
             %span.icon-bar
           %a.navbar-brand 学生団体CHAD管理システム
-        / /.navbar-header
-        %ul.nav.navbar-top-links.navbar-right
-          %li.dropdown
-            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-              %i.fa.fa-user.fa-fw
-              %i.fa.fa-caret-down
-            %ul.dropdown-menu.dropdown-user
-              %li
-                %a{href: "#"}
-                  %i.fa.fa-user.fa-fw
-                  プロフィール
-              %li
-                %a{href: "#"}
-                  %i.fa.fa-gear.fa-fw
-                  設定
-              %li.divider
-              %li
-                %a{href: "login.html"}
-                  %i.fa.fa-sign-out.fa-fw
-                  ログアウト
-            / /.dropdown-user
-          / /.dropdown
-        / /.navbar-top-links
         .navbar-default.sidebar{:role => "navigation"}
           .sidebar-nav.navbar-collapse
             %ul#side-menu.nav
@@ -96,11 +73,11 @@
                     =form_for [:admin, @adkisei ] do |f|
                       .form-group
                         =f.label :期生
-                        = f.text_field :name, placeholder: "例）一期生", class: "form-control"
+                        = f.text_field :name, required: true, placeholder: "例）一期生", class: "form-control"
                       .form-group
                         =f.label :紹介文
-                        =f.text_area :text, placeholder: "例）僕たち一期生は学生団体CHADを創設しました。", class: "form-control"
+                        =f.text_area :text, required: true, placeholder: "例）僕たち一期生は学生団体CHADを創設しました。", class: "form-control"
                       .form-group
                         =f.label :背景画像
-                        =f.file_field :backimage
+                        =f.file_field :backimage, required: true
                       =f.submit "編集", class: "btn btn-default" #classを複数指定する場合はこのようにする。

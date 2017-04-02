@@ -1,0 +1,12 @@
+//erb拡張子を一括でhaml拡張子に変換してくれるコマンドがあるので、手動でしない！
+//rake haml:replace_erbsこれをすると、自動でファイルが置換される！！！！！！
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title CHADHP
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    = yield

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :adminusers
   root 'chads#index'
   resources :introductions, only: [:index]
   resources :missions, only: [:index]
