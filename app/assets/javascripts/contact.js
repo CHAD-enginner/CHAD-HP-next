@@ -2,16 +2,7 @@ $(document).on('turbolinks:load', function(){
 
   function append(data){
     var header = $(".contact-intro-header");
-    var html = `<div class="container">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="intro-message">
-                        <h3>お問い合わせありがとうございます。</h3>
-                        <h3>2,3日以内に担当者から返信を差し上げます。</h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>`;
+    var html = '<div class="container"><div class="row"><div class="col-lg-12"><div class="intro-message"><h3>お問い合わせありがとうございます。</h3><h3>2,3日以内に担当者から返信を差し上げます。</h3></div></div></div></div>';
     $(".chat-group-form").remove();
     header.append(html);
   }

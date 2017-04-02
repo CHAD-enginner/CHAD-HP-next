@@ -78,7 +78,6 @@
                       %th 大学・企業
                       %th 学年
                       %th 問い合わせ内容
-                      %th 設定
                   %tbody
                   -@contacts.each do |contact|
                     %tr.odd.gradeX
@@ -92,8 +91,3 @@
                         =contact.grade
                       %td
                         =contact.text
-                      %td.center
-                        =link_to root_path, class: "edit-btn", style: "width: 50%; height: 100%; display: block; float: left;" do
-                          編集
-                        =link_to root_path, class: "detail-btn", style: "width: 50%; height: 100%; display: block; float: left;" do
-                          詳細
