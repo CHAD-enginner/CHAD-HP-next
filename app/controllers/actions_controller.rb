@@ -1,6 +1,6 @@
 class ActionsController < ApplicationController
 
-  def index
+  def indexs
   end
 
 end

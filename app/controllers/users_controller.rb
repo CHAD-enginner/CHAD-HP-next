@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
   def index
-    @kisei = Kisei.find(params[:kisei_id])
-    @users = @kisei.users
+    @kisei = Adkisei.find(params[:kisei_id])
+    @users = @kisei.adusers
   end
 
 end
