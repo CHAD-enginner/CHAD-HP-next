@@ -87,10 +87,9 @@
                     %tr
                       %th 期生
                       %th 名前
-                      %th 役割
-                      %th メール
-                      %th 住所
-                      %th 電話番号
+                      %th 大学・学部
+                      %th 学籍番号
+                      %th 勤務先・役割
                       %th 設定
                   %tbody
                   -if (@adusers.nil?) #controllerから送られて来た値がnillの場合は下のようにeachで出せないのでエラーが起こってしまう、、なので条件分岐でnillの場合は何も表示させないような実装にしている。
@@ -102,16 +101,12 @@
                         %td
                           =aduser.name
                         %td
+                          =aduser.university
+                        %td
+                          =aduser.studentnumber
+                        %td
                           =aduser.role
-                        %td
-                          =aduser.email
-                        %td
-                          =aduser.adress
-                        %td
-                          =aduser.phone
                         %td.center
-                          =link_to edit_admin_aduser_path(aduser.id), class: "edit-btn", style: "width: 50%; height: 100%; display: block; float: left;" do
-                            編集
                           =link_to admin_aduser_path(aduser.id), class: "detail-btn", style: "width: 50%; height: 100%; display: block; float: left;" do
                             詳細
 

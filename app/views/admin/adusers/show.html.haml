@@ -72,10 +72,9 @@
                     %tr
                       %th 期生
                       %th 名前
-                      %th 役割
-                      %th メール
-                      %th 住所
-                      %th 電話番号
+                      %th 大学・学部
+                      %th 学籍番号
+                      %th 勤務先・役割
                   %tbody
                     %tr.odd.gradeX
                     %td
@@ -83,13 +82,25 @@
                     %td
                       =@aduser.name
                     %td
+                      =@aduser.university
+                    %td
+                      =@aduser.studentnumber
+                    %td
                       =@aduser.role
+                %table#dataTables-example.table.table-striped.table-bordered.table-hover{width: "100%"}
+                  %thead
+                    %tr
+                      %th 電話番号
+                      %th email
+                      %th 住所
+                  %tbody
+                    %tr.odd.gradeX
+                    %td
+                      =@aduser.phone
                     %td
                       =@aduser.email
                     %td
                       =@aduser.adress
-                    %td
-                      =@aduser.phone
-        = link_to "/admin/adusers/#{@aduser.id}", method: :delete, data: {confirm: "本当に削除しますか？"} do
+        = link_to edit_admin_aduser_path(@aduser.id) do
           .well
-            .btn.btn-default.btn-lg.btn-block.delete-btn 削除
+            .btn.btn-default.btn-lg.btn-block 編集
