@@ -90,6 +90,6 @@
                       =@aduser.adress
                     %td
                       =@aduser.phone
-        = link_to "/admin/adusers/#{@aduser.id}", method: :delete, confirm: "are" do
+        = link_to "/admin/adusers/#{@aduser.id}", method: :delete, data: {confirm: "本当に削除しますか？"} do
           .well
             .btn.btn-default.btn-lg.btn-block.delete-btn 削除

@@ -84,6 +84,6 @@
                       =@adkisei.created_at.to_s(:short)
                     %td
                       =@adkisei.updated_at.to_s(:short)
-        = link_to "/admin/adkiseis/#{@adkisei.id}", method: :delete, confirm: "are" do
+        = link_to "/admin/adkiseis/#{@adkisei.id}", method: :delete, data: {confirm: "本当に削除しますか？"} do
           .well
             .btn.btn-default.btn-lg.delete-btn 削除

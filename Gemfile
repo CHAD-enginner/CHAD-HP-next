@@ -33,7 +33,6 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise'
 gem 'carrierwave'
-gem 'rmagick'
 gem 'fog'
 gem 'dotenv-rails'
 # Use Redis adapter to run Action Cable in production
