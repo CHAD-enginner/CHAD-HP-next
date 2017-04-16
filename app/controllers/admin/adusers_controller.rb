@@ -66,7 +66,7 @@ class Admin::AdusersController < Admin::ApplicationController
   private
 
   def aduser_params
-    params.require(:aduser).permit(:adkisei_id, :name, :role, :email, :adress, :phone, :avator)
+    params.require(:aduser).permit(:adkisei_id, :name, :role, :email, :adress, :phone, :avator, :university, :studentnumber)
   end
 
 end

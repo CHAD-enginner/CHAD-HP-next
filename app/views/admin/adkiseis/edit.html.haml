@@ -32,7 +32,7 @@
                       %i.fa.fa-search
                 / /input-group
               %li
-                %a{href: "index.html"}
+                %a{href: admin_root_path}
                   %i.fa.fa-dashboard.fa-fw
                   Dashboard
               %li
@@ -81,3 +81,6 @@
                         =f.label :背景画像
                         =f.file_field :backimage, required: true
                       =f.submit "編集", class: "btn btn-default" #classを複数指定する場合はこのようにする。
+                      =link_to "admin/adusers/#{@adkisei.id}", data: {confirm: "本当に削除しますか？"} do
+                        .btn.btn-default.delete-btn
+                          削除

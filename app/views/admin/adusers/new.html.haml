@@ -76,15 +76,21 @@
                       .form-group
                         =f.label :名前
                         =f.text_field :name, required: true, placeholder: "", class: "form-control"
-                        .form-group
-                        =f.label :役割
+                      .form-group
+                        =f.label :大学・学部
+                        =f.text_field :university, required: true, placeholder: "", class: "form-control"
+                      .form-group
+                        =f.label :学籍番号
+                        =f.text_field :studentnumber, placeholder: "", class: "form-control"
+                      .form-group
+                        =f.label :勤務先・役割
                         =f.text_field :role, required: true, placeholder: "", class: "form-control"
                       .form-group
                         =f.label :メールアドレス
                         =f.text_field :email, required: true, placeholder: "", class: "form-control"
                       .form-group
                         =f.label :住所
-                        =f.text_field :adress, required: true, placeholder: "", class: "form-control"
+                        =f.text_field :adress, placeholder: "", class: "form-control"
                       .form-group
                         =f.label :電話番号
                         =f.text_field :phone, required: true, placeholder: "", class: "form-control"
