@@ -13,7 +13,6 @@ class Admin::AdkiseisController < Admin::ApplicationController
     if @adkisei.save
       redirect_to admin_kiseis_path
     else
-      #記入していないところをさしてあげる実装をする！
     end
 
   end
@@ -34,7 +33,7 @@ class Admin::AdkiseisController < Admin::ApplicationController
   def update
     @adkisei = Adkisei.find(params[:id])
     if @adkisei.update(adkisei_params)
-      redirect_to admin_kiseis_path
+      redirect_to admin_adkisei_path(@adkisei.id)
     else
 
     end

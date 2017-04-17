@@ -45,7 +45,7 @@ class Admin::AdusersController < Admin::ApplicationController
   def update
     @aduser = Aduser.find(params[:id])
     if @aduser.update(aduser_params)
-      redirect_to admin_adusers_path
+      redirect_to admin_aduser_path(@aduser.id)
     else
     end
   end
