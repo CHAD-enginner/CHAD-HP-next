@@ -73,13 +73,15 @@
                     =form_for [:admin, @adkisei ] do |f|
                       .form-group
                         =f.label :期生
+                        %span.form-require （必須）
                         = f.text_field :name, required: true, placeholder: "例）一期生", class: "form-control"
                       .form-group
                         =f.label :紹介文
+                        %span.form-require （必須）
                         =f.text_area :text, required: true, placeholder: "例）僕たち一期生は学生団体CHADを創設しました。", class: "form-control"
                       .form-group
                         =f.label :背景画像
-                        =f.file_field :backimage, required: true
+                        =f.file_field :backimage
                       =f.submit "編集", class: "btn btn-default" #classを複数指定する場合はこのようにする。
                       =link_to "/admin/adusers/#{@adkisei.id}", data: {confirm: "本当に削除しますか？"} do
                         .btn.btn-default.delete-btn
