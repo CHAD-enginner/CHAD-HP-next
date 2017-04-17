@@ -59,7 +59,10 @@
         .row
           .col-lg-12
             %h1.page-header 詳細
-            .aduser_avator{{style: "background: url(#{@aduser.avator}) no-repeat center center; background-size: cover;"}}
+            -if @aduser.avator.present?
+              .aduser_avator{{style: "background: url(#{@aduser.avator}) no-repeat center center; background-size: cover;"}}
+            -else
+              .aduser_avator{{style: "background: url(/assets/no-face) no-repeat center center; background-size: cover;"}}
         .row
           .col-lg-12
             .panel.panel-default

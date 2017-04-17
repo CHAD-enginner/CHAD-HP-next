@@ -72,30 +72,32 @@
                     =form_for [:admin, @aduser] do |f|
                       .form-group
                         =f.label :期生
-                        =f.collection_select :adkisei_id, @adkiseis, :id, :name, {include_blank: ""}, {class: "form-control"}  #クラス指定したい場合は、オプションとして指定してあげるので、既存のオプションである,include_blankやpromoteの欄と分けてかく。:idは、バリューの値、:nameはぞれぞれの期生の名前を表示している。
+                        %span.form-require （必須）
+                        =f.collection_select :adkisei_id, @adkiseis, :id, :name, {include_blank: ""}, {class: "form-control", required: true}  #クラス指定したい場合は、オプションとして指定してあげるので、既存のオプションである,include_blankやpromoteの欄と分けてかく。:idは、バリューの値、:nameはぞれぞれの期生の名前を表示している。
                       .form-group
                         =f.label :名前
+                        %span.form-require （必須）
                         =f.text_field :name, required: true, placeholder: "", class: "form-control"
                       .form-group
                         =f.label :大学・学部
-                        =f.text_field :university, required: true, placeholder: "", class: "form-control"
+                        =f.text_field :university, placeholder: "", class: "form-control"
                       .form-group
                         =f.label :学籍番号
                         =f.text_field :studentnumber, placeholder: "", class: "form-control"
                       .form-group
                         =f.label :勤務先・役割
-                        =f.text_field :role, required: true, placeholder: "", class: "form-control"
+                        =f.text_field :role, placeholder: "", class: "form-control"
                       .form-group
                         =f.label :メールアドレス
-                        =f.text_field :email, required: true, placeholder: "", class: "form-control"
+                        =f.text_field :email, placeholder: "", class: "form-control"
                       .form-group
                         =f.label :住所
                         =f.text_field :adress, placeholder: "", class: "form-control"
                       .form-group
                         =f.label :電話番号
-                        =f.text_field :phone, required: true, placeholder: "", class: "form-control"
+                        =f.text_field :phone, placeholder: "", class: "form-control"
                       .form-group
                         =f.label :顔写真
-                        =f.file_field :avator, required: true
+                        =f.file_field :avator
                       =f.submit '作成', class: "btn btn-default"
 
