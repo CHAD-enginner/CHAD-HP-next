@@ -61,12 +61,11 @@
         .row
           .col-lg-12
             %h1.page-header 期生一覧
-        =link_to new_admin_adkisei_path do
-          .well
-            .btn.btn-default.btn-lg.btn-block
-              期生作成
-          / /.col-lg-12
-        / /.row
+        -if current_adminuser.id == 2
+          =link_to new_admin_adkisei_path do
+            .well
+              .btn.btn-default.btn-lg.btn-block
+                期生作成
         .row
           .col-lg-12
             .panel.panel-default
