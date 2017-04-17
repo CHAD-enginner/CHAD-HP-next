@@ -59,10 +59,11 @@
         .row
           .col-lg-12
             %h1.page-header メンバー一覧
-        =link_to new_admin_aduser_path do
-          .well
-            .btn.btn-default.btn-lg.btn-block
-              メンバー作成
+        -if current_adminuser.id == 2
+          =link_to new_admin_aduser_path do
+            .well
+              .btn.btn-default.btn-lg.btn-block
+                メンバー作成
         .well
           =form_tag(search_admin_adusers_path, method: "GET") do
             .search-box

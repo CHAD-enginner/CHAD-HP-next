@@ -1,11 +1,17 @@
 class Admin::AdkiseisController < Admin::ApplicationController
 
+
   def index
     @adkiseis = Adkisei.all
   end
 
   def new
-    @adkisei = Adkisei.new
+    @adminuser = Adminuser.find(current_adminuser.id)
+    if @adminuser.id != 2
+      redirect_to admin_root_path
+    else
+      @adkisei = Adkisei.new
+    end
   end
 
   def create
@@ -18,16 +24,25 @@ class Admin::AdkiseisController < Admin::ApplicationController
   end
 
   def destroy
-    @adkisei = Adkisei.find(params[:id])
-    if @adkisei.destroy
-      redirect_to admin_kiseis_path
+    @adminuser = Adminuser.find(current_adminuser.id)
+    if @adminuser.id != 2
+      redirect_to admin_root_path
     else
+      @adkisei = Adkisei.find(params[:id])
+      if @adkisei.destroy
+        redirect_to admin_kiseis_path
+      else
+      end
     end
-
   end
 
   def edit
-    @adkisei = Adkisei.find(params[:id])
+    @adminuser = Adminuser.find(current_adminuser.id)
+    if @adminuser.id != 2
+      redirect_to admin_root_path
+    else
+      @adkisei = Adkisei.find(params[:id])
+    end
   end
 
   def update

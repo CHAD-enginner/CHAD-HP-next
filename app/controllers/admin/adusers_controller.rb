@@ -6,8 +6,13 @@ class Admin::AdusersController < Admin::ApplicationController
   end
 
   def new
-    @aduser = Aduser.new
-    @adkiseis = Adkisei.all
+    @adminuser = Adminuser.find(current_adminuser.id)
+    if @adminuser.id != 2
+      redirect_to admin_root_path
+    else
+      @aduser = Aduser.new
+      @adkiseis = Adkisei.all
+    end
   end
 
   def search
@@ -38,8 +43,13 @@ class Admin::AdusersController < Admin::ApplicationController
   end
 
   def edit
-    @aduser = Aduser.find(params[:id])
-    @adkiseis = Adkisei.all
+    @adminuser = Adminuser.find(current_adminuser.id)
+    if @adminuser.id != 2
+      redirect_to admin_root_path
+    else
+      @aduser = Aduser.find(params[:id])
+      @adkiseis = Adkisei.all
+    end
   end
 
   def update
@@ -55,10 +65,15 @@ class Admin::AdusersController < Admin::ApplicationController
   end
 
   def destroy
-    @aduser = Aduser.find(params[:id])
-    if @aduser.destroy
-      redirect_to admin_adusers_path
+    @adminuser = Adminuser.find(current_adminuser.id)
+    if @adminuser.id != 2
+      redirect_to admin_root_path
     else
+      @aduser = Aduser.find(params[:id])
+      if @aduser.destroy
+        redirect_to admin_adusers_path
+      else
+      end
     end
   end
 

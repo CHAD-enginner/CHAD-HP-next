@@ -4,4 +4,5 @@ class Adkisei < ApplicationRecord
   validates :text, presence: true
 
   mount_uploader :backimage, ImageUploader
+
 end
