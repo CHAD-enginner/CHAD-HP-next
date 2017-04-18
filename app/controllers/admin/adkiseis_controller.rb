@@ -1,12 +1,13 @@
 class Admin::AdkiseisController < Admin::ApplicationController
 
+  before_action :set_adminuser, only: [:new, :destroy, :edit]
+
 
   def index
     @adkiseis = Adkisei.all
   end
 
   def new
-    @adminuser = Adminuser.find(current_adminuser.id)
     if @adminuser.id != 2
       redirect_to admin_root_path
     else
@@ -24,7 +25,6 @@ class Admin::AdkiseisController < Admin::ApplicationController
   end
 
   def destroy
-    @adminuser = Adminuser.find(current_adminuser.id)
     if @adminuser.id != 2
       redirect_to admin_root_path
     else
@@ -37,7 +37,6 @@ class Admin::AdkiseisController < Admin::ApplicationController
   end
 
   def edit
-    @adminuser = Adminuser.find(current_adminuser.id)
     if @adminuser.id != 2
       redirect_to admin_root_path
     else
@@ -62,6 +61,10 @@ class Admin::AdkiseisController < Admin::ApplicationController
 
   def adkisei_params
     params.require(:adkisei).permit(:name, :text, :backimage)
+  end
+
+  def set_adminuser
+    @adminuser = Adminuser.find(current_adminuser.id)
   end
 
 

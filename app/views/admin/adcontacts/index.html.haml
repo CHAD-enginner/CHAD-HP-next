@@ -1,93 +1,30 @@
-!!!
-%html{:lang => "en"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "author"}/
-    %title 期生一覧
-    / Bootstrap Core CSS
-    = stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-    #wrapper
-      / Navigation
-      %nav.navbar.navbar-default.navbar-static-top{:role => "navigation", :style => "margin-bottom: 0"}
-        .navbar-header
-          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand 学生団体CHAD管理システム
-        .navbar-default.sidebar{:role => "navigation"}
-          .sidebar-nav.navbar-collapse
-            %ul#side-menu.nav
-              %li.sidebar-search
-                .input-group.custom-search-form
-                  %input.form-control{:placeholder => "Search...", :type => "text"}/
-                  %span.input-group-btn
-                    %button.btn.btn-default{:type => "button"}
-                      %i.fa.fa-search
-                / /input-group
-              %li
-                =link_to admin_root_path do
-                  %i.fa.fa-dashboard.fa-fw
-                  Dashboard
-              %li
-                =link_to admin_kiseis_path do
-                  %i.fa.fa-bar-chart-o.fa-fw
-                  期生
-                / %ul.nav.nav-second-level
-                /   %li
-                /     %a{href: "flot.html"} Flot Charts
-                /   %li
-                /     %a{href: "morris.html"} Morris.js Charts
-                / /.nav-second-level
-              %li
-                =link_to admin_users_path do
-                  %i.fa.fa-table.fa-fw
-                  メンバー
-              %li
-                =link_to admin_contacts_path do
-                  %i.fa.fa-edit.fa-fw
-                  お問い合わせ
-                / /.nav-second-level
-          / /.sidebar-collapse
-        / /.navbar-static-side
-      #page-wrapper
-        .row
-          .col-lg-12
-            %h1.page-header お問い合わせ一覧
-          / /.col-lg-12
-        / /.row
-        .row
-          .col-lg-12
-            .panel.panel-default
-              .panel-heading
-                Contacts DataTables
-              / /.panel-heading
-              .panel-body
-                %table#dataTables-example.table.table-striped.table-bordered.table-hover{width: "100%"}
-                  %thead
-                    %tr
-                      %th 名前
-                      %th メール
-                      %th 大学・企業
-                      %th 学年
-                      %th 問い合わせ内容
-                  %tbody
-                  -@contacts.each do |contact|
-                    %tr.odd.gradeX
-                      %td
-                        =contact.name
-                      %td
-                        =contact.email
-                      %td
-                        =contact.university
-                      %td
-                        =contact.grade
-                      %td
-                        =contact.text
+.row
+  .col-lg-12
+    %h1.page-header お問い合わせ一覧
+.row
+  .col-lg-12
+    .panel.panel-default
+      .panel-heading
+        Contacts DataTables
+      .panel-body
+        %table#dataTables-example.table.table-striped.table-bordered.table-hover{width: "100%"}
+          %thead
+            %tr
+              %th 名前
+              %th メール
+              %th 大学・企業
+              %th 学年
+              %th 問い合わせ内容
+          %tbody
+          -@contacts.each do |contact|
+            %tr.odd.gradeX
+              %td
+                =contact.name
+              %td
+                =contact.email
+              %td
+                =contact.university
+              %td
+                =contact.grade
+              %td
+                =contact.text
