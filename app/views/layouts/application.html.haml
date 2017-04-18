@@ -3,16 +3,17 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
     %title CHADHP
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag 'chad.ico'
   %body
-    %nav.navbar.navbar-default.navbar-fixed-top.topnav{:role => "navigation"}
+    %nav.navbar.navbar-default.navbar-fixed-top.topnav{role: "navigation"}
       .topnav
         .navbar-header
-          %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %button.navbar-toggle{"data-target": "#bs-example-navbar-collapse-1", "data-toggle": "collapse", type: "button"}
             %span.sr-only Toggle navigation
             %span.icon-bar
             %span.icon-bar

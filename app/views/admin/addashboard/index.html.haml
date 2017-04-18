@@ -1,113 +1,52 @@
-!!!
-%html{:lang => "en"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "author"}/
-    %title 学生団体CHAD管理者システム
-    = stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-    #wrapper
-      / Navigation
-      %nav.navbar.navbar-default.navbar-static-top{:role => "navigation", :style => "margin-bottom: 0"}
-        .navbar-header
-          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand 学生団体CHAD管理システム
-        .navbar-default.sidebar{:role => "navigation"}
-          .sidebar-nav.navbar-collapse
-            %ul#side-menu.nav
-              %li.sidebar-search
-                .input-group.custom-search-form
-                  %input.form-control{:placeholder => "Search...", :type => "text"}/
-                  %span.input-group-btn
-                    %button.btn.btn-default{:type => "button"}
-                      %i.fa.fa-search
-                / /input-group
-              %li
-                =link_to admin_root_path do
-                  %i.fa.fa-dashboard.fa-fw
-                  Dashboard
-              %li
-                =link_to admin_kiseis_path do
-                  %i.fa.fa-bar-chart-o.fa-fw
-                  期生
-                / %ul.nav.nav-second-level
-                /   %li
-                /     %a{:href => "flot.html"} Flot Charts
-                /   %li
-                /     %a{:href => "morris.html"} Morris.js Charts
-                / /.nav-second-level
-              %li
-                =link_to admin_users_path do
-                  %i.fa.fa-table.fa-fw
-                  メンバー
-              %li
-                =link_to admin_contacts_path do
-                  %i.fa.fa-edit.fa-fw
-                  お問い合わせ
-                / /.nav-second-level
-          / /.sidebar-collapse
-        / /.navbar-static-side
-      #page-wrapper
+.row
+  .col-lg-12
+    %h1.page-header Dashboard
+.row
+  .col-lg-3.col-md-6
+    .panel.panel-primary
+      .panel-heading
         .row
-          .col-lg-12
-            %h1.page-header Dashboard
-          / /.col-lg-12
-        / /.row
+          .col-xs-3
+            %i.fa.fa-comments.fa-5x
+          .col-xs-9.text-right
+            .huge
+              =@adkiseis.length
+            %div 期生
+      =link_to admin_kiseis_path do
+        .panel-footer
+          %span.pull-left View Details
+          %span.pull-right
+            %i.fa.fa-arrow-circle-right
+          .clearfix
+  .col-lg-3.col-md-6
+    .panel.panel-green
+      .panel-heading
         .row
-          .col-lg-3.col-md-6
-            .panel.panel-primary
-              .panel-heading
-                .row
-                  .col-xs-3
-                    %i.fa.fa-comments.fa-5x
-                  .col-xs-9.text-right
-                    .huge
-                      =@adkiseis.length
-                    %div 期生
-              =link_to admin_kiseis_path do
-                .panel-footer
-                  %span.pull-left View Details
-                  %span.pull-right
-                    %i.fa.fa-arrow-circle-right
-                  .clearfix
-          .col-lg-3.col-md-6
-            .panel.panel-green
-              .panel-heading
-                .row
-                  .col-xs-3
-                    %i.fa.fa-tasks.fa-5x
-                  .col-xs-9.text-right
-                    .huge
-                      =@adusers.length
-                    %div メンバー
-              =link_to admin_users_path do
-                .panel-footer
-                  %span.pull-left View Details
-                  %span.pull-right
-                    %i.fa.fa-arrow-circle-right
-                  .clearfix
-          .col-lg-3.col-md-6
-            .panel.panel-yellow
-              .panel-heading
-                .row
-                  .col-xs-3
-                    %i.fa.fa-shopping-cart.fa-5x
-                  .col-xs-9.text-right
-                    .huge
-                      =@adcontacts.length
-                    %div お問い合わせ
-              =link_to admin_contacts_path do
-                .panel-footer
-                  %span.pull-left View Details
-                  %span.pull-right
-                    %i.fa.fa-arrow-circle-right
-                  .clearfix
+          .col-xs-3
+            %i.fa.fa-tasks.fa-5x
+          .col-xs-9.text-right
+            .huge
+              =@adusers.length
+            %div メンバー
+      =link_to admin_users_path do
+        .panel-footer
+          %span.pull-left View Details
+          %span.pull-right
+            %i.fa.fa-arrow-circle-right
+          .clearfix
+  .col-lg-3.col-md-6
+    .panel.panel-yellow
+      .panel-heading
+        .row
+          .col-xs-3
+            %i.fa.fa-shopping-cart.fa-5x
+          .col-xs-9.text-right
+            .huge
+              =@adcontacts.length
+            %div お問い合わせ
+      =link_to admin_contacts_path do
+        .panel-footer
+          %span.pull-left View Details
+          %span.pull-right
+            %i.fa.fa-arrow-circle-right
+          .clearfix

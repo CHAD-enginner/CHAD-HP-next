@@ -1,106 +1,45 @@
-!!!
-%html{:lang => "en"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "author"}/
-    %title SB Admin 2 - Bootstrap Admin Theme
-    = stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-    #wrapper
-      %nav.navbar.navbar-default.navbar-static-top{:role => "navigation", :style => "margin-bottom: 0"}
-        .navbar-header
-          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand 学生団体CHAD管理システム
-        .navbar-default.sidebar{:role => "navigation"}
-          .sidebar-nav.navbar-collapse
-            %ul#side-menu.nav
-              %li.sidebar-search
-                .input-group.custom-search-form
-                  %input.form-control{:placeholder => "Search...", :type => "text"}/
-                  %span.input-group-btn
-                    %button.btn.btn-default{:type => "button"}
-                      %i.fa.fa-search
-                / /input-group
-              %li
-                =link_to admin_root_path do
-                  %i.fa.fa-dashboard.fa-fw
-                  Dashboard
-              %li
-                =link_to admin_kiseis_path do
-                  %i.fa.fa-bar-chart-o.fa-fw
-                  期生
-                / %ul.nav.nav-second-level
-                /   %li
-                /     %a{href: "flot.html"} Flot Charts
-                /   %li
-                /     %a{href: "morris.html"} Morris.js Charts
-                / /.nav-second-level
-              %li
-                =link_to admin_users_path do
-                  %i.fa.fa-table.fa-fw
-                  メンバー
-              %li
-                =link_to admin_contacts_path do
-                  %i.fa.fa-edit.fa-fw
-                  お問い合わせ
-                / /.nav-second-level
-          / /.sidebar-collapse
-        / /.navbar-static-side
-      #page-wrapper
+.row
+  .col-lg-12
+    %h1.page-header メンバー作成
+.row
+  .col-lg-12
+    .panel.panel-default
+      .panel-heading
+        Users Create Form
+      .panel-body
         .row
-          .col-lg-12
-            %h1.page-header メンバー作成
-          / /.col-lg-12
-        / /.row
-        .row
-          .col-lg-12
-            .panel.panel-default
-              .panel-heading
-                Users Create Form
-              .panel-body
-                .row
-                  .col-lg-6
-                    =form_for [:admin, @aduser] do |f|
-                      .form-group
-                        =f.label :期生
-                        %span.form-require （必須）
-                        =f.collection_select :adkisei_id, @adkiseis, :id, :name, {include_blank: ""}, {class: "form-control", required: true}  #クラス指定したい場合は、オプションとして指定してあげるので、既存のオプションである,include_blankやpromoteの欄と分けてかく。:idは、バリューの値、:nameはぞれぞれの期生の名前を表示している。
-                      .form-group
-                        =f.label :名前
-                        %span.form-require （必須）
-                        =f.text_field :name, required: true, placeholder: "", class: "form-control"
-                      .form-group
-                        =f.label :大学・学部
-                        =f.text_field :university, placeholder: "", class: "form-control"
-                      .form-group
-                        =f.label :学籍番号
-                        =f.text_field :studentnumber, placeholder: "", class: "form-control"
-                      .form-group
-                        =f.label :勤務先・役割
-                        =f.text_field :role, placeholder: "", class: "form-control"
-                      .form-group
-                        =f.label :メールアドレス
-                        =f.text_field :email, placeholder: "", class: "form-control"
-                      .form-group
-                        =f.label :住所
-                        =f.text_field :adress, placeholder: "", class: "form-control"
-                      .form-group
-                        =f.label :電話番号
-                        =f.text_field :phone, placeholder: "", class: "form-control"
-                      .form-group
-                        =f.label :顔写真
-                        =f.file_field :avator
-                      =f.submit '編集', class: "btn btn-default"
-                      =link_to "/admin/adusers/#{@aduser.id}", method: :delete, data: {confirm: "本当に削除しますか？"} do
-                        .btn.btn-default.delete-btn
-                          削除
-
+          .col-lg-6
+            =form_for [:admin, @aduser] do |f|
+              .form-group
+                =f.label :期生
+                %span.form-require （必須）
+                =f.collection_select :adkisei_id, @adkiseis, :id, :name, {include_blank: ""}, {class: "form-control", required: true}  #クラス指定したい場合は、オプションとして指定してあげるので、既存のオプションである,include_blankやpromoteの欄と分けてかく。:idは、バリューの値、:nameはぞれぞれの期生の名前を表示している。
+              .form-group
+                =f.label :名前
+                %span.form-require （必須）
+                =f.text_field :name, required: true, placeholder: "", class: "form-control"
+              .form-group
+                =f.label :大学・学部
+                =f.text_field :university, placeholder: "", class: "form-control"
+              .form-group
+                =f.label :学籍番号
+                =f.text_field :studentnumber, placeholder: "", class: "form-control"
+              .form-group
+                =f.label :勤務先・役割
+                =f.text_field :role, placeholder: "", class: "form-control"
+              .form-group
+                =f.label :メールアドレス
+                =f.text_field :email, placeholder: "", class: "form-control"
+              .form-group
+                =f.label :住所
+                =f.text_field :adress, placeholder: "", class: "form-control"
+              .form-group
+                =f.label :電話番号
+                =f.text_field :phone, placeholder: "", class: "form-control"
+              .form-group
+                =f.label :顔写真
+                =f.file_field :avator
+              =f.submit '編集', class: "btn btn-default"
+              =link_to "/admin/adusers/#{@aduser.id}", method: :delete, data: {confirm: "本当に削除しますか？"} do
+                .btn.btn-default.delete-btn
+                  削除

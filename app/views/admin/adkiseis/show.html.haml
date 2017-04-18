@@ -1,93 +1,34 @@
-!!!
-%html{:lang => "en"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "author"}/
-    %title 期生一覧
-    = stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-    #wrapper
-      %nav.navbar.navbar-default.navbar-static-top{:role => "navigation", :style => "margin-bottom: 0"}
-        .navbar-header
-          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand 学生団体CHAD管理システム
-        .navbar-default.sidebar{:role => "navigation"}
-          .sidebar-nav.navbar-collapse
-            %ul#side-menu.nav
-              %li.sidebar-search
-                .input-group.custom-search-form
-                  %input.form-control{:placeholder => "Search...", :type => "text"}/
-                  %span.input-group-btn
-                    %button.btn.btn-default{:type => "button"}
-                      %i.fa.fa-search
-                / /input-group
-              %li
-                =link_to admin_root_path do
-                  %i.fa.fa-dashboard.fa-fw
-                  Dashboard
-              %li
-                =link_to admin_kiseis_path do
-                  %i.fa.fa-bar-chart-o.fa-fw
-                  期生
-                / %ul.nav.nav-second-level
-                /   %li
-                /     %a{href: "flot.html"} Flot Charts
-                /   %li
-                /     %a{href: "morris.html"} Morris.js Charts
-                / /.nav-second-level
-              %li
-                =link_to admin_users_path do
-                  %i.fa.fa-table.fa-fw
-                  メンバー
-              %li
-                =link_to admin_contacts_path do
-                  %i.fa.fa-edit.fa-fw
-                  お問い合わせ
-                / /.nav-second-level
-          / /.sidebar-collapse
-        / /.navbar-static-side
-      #page-wrapper
-        .row
-          .col-lg-12
-            %h1.page-header 詳細
-            -if @adkisei.backimage.present?
-              .adkisei_backimage{{style: "background: url(#{@adkisei.backimage}) no-repeat center center; background-size: cover;"}}
-            -else
-              .adkisei_backimage{{style: "background: url(/assets/logo) no-repeat center center; background-size: cover;"}}
-        .row
-          .col-lg-12
-            .panel.panel-default
-              .panel-heading
-                Kiseis DataTables
-              / /.panel-heading
-              .panel-body
-                %table#dataTables-example.table.table-striped.table-bordered.table-hover{width: "100%"}
-                  %thead
-                    %tr
-                      %th 期生
-                      %th 紹介文
-                      %th 作成日時
-                      %th 更新日時
-                  %tbody
-                    %tr.odd.gradeX
-                    %td
-                      =@adkisei.name
-                    %td
-                      =@adkisei.text
-                    %td
-                      =@adkisei.created_at.to_s(:short)
-                    %td
-                      =@adkisei.updated_at.to_s(:short)
-        -if current_adminuser.id == 2
-          = link_to edit_admin_adkisei_path(@adkisei.id) do
-            .well
-              .btn.btn-default.btn-lg 編集
+.row
+  .col-lg-12
+    %h1.page-header 詳細
+    -if @adkisei.backimage.present?
+      .adkisei_backimage{{style: "background: url(#{@adkisei.backimage}) no-repeat center center; background-size: cover;"}}
+    -else
+      .adkisei_backimage{{style: "background: url(/assets/logo) no-repeat center center; background-size: cover;"}}
+.row
+  .col-lg-12
+    .panel.panel-default
+      .panel-heading
+        Kiseis DataTables
+      .panel-body
+        %table#dataTables-example.table.table-striped.table-bordered.table-hover{width: "100%"}
+          %thead
+            %tr
+              %th 期生
+              %th 紹介文
+              %th 作成日時
+              %th 更新日時
+          %tbody
+            %tr.odd.gradeX
+            %td
+              =@adkisei.name
+            %td
+              =@adkisei.text
+            %td
+              =@adkisei.created_at.to_s(:short)
+            %td
+              =@adkisei.updated_at.to_s(:short)
+-if current_adminuser.id == 2
+  = link_to edit_admin_adkisei_path(@adkisei.id) do
+    .well
+      .btn.btn-default.btn-lg 編集

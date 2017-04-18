@@ -1,12 +1,13 @@
 class Admin::AdusersController < Admin::ApplicationController
 
+  before_action :set_adminuser, only: [:new, :edit, :destroy]
+
   def index
     @adusers = Aduser.all
     @adkiseis = Adkisei.all
   end
 
   def new
-    @adminuser = Adminuser.find(current_adminuser.id)
     if @adminuser.id != 2
       redirect_to admin_root_path
     else
@@ -43,7 +44,6 @@ class Admin::AdusersController < Admin::ApplicationController
   end
 
   def edit
-    @adminuser = Adminuser.find(current_adminuser.id)
     if @adminuser.id != 2
       redirect_to admin_root_path
     else
@@ -65,7 +65,6 @@ class Admin::AdusersController < Admin::ApplicationController
   end
 
   def destroy
-    @adminuser = Adminuser.find(current_adminuser.id)
     if @adminuser.id != 2
       redirect_to admin_root_path
     else
@@ -82,6 +81,10 @@ class Admin::AdusersController < Admin::ApplicationController
 
   def aduser_params
     params.require(:aduser).permit(:adkisei_id, :name, :role, :email, :adress, :phone, :avator, :university, :studentnumber)
+  end
+
+  def set_adminuser
+    @adminuser = Adminuser.find(current_adminuser.id)
   end
 
 end
