@@ -28,9 +28,9 @@
                 %td
                   =kisei.text
                 %td
-                  =kisei.created_at.to_s(:short)
+                  =kisei.createtime
                 %td
-                  =kisei.updated_at.to_s(:short)
+                  =kisei.updatetime
                 %td.center
                   =link_to admin_adkisei_path(kisei.id), class: "detail-btn", style: "width: 50%; height: 100%; display: block; float: left;" do
                     詳細
