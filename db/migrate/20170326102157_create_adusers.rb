@@ -3,7 +3,7 @@ class CreateAdusers < ActiveRecord::Migration[5.0]
     create_table :adusers do |t|
       t.string :name
       t.string :university
-      t.integer :studentnumber
+      t.string :studentnumber
       t.string :role
       t.string :email
       t.string :adress
