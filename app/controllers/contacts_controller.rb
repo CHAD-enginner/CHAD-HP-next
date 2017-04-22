@@ -1,5 +1,7 @@
 class ContactsController < ApplicationController
 
+  layout "devise"
+
   def new
     @contact = Contact.new
   end
@@ -8,23 +10,13 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
       if @contact.save
         MailSenderMailer.inquiry(@contact).deliver #rails g mailer mail_sender inquiry, mail_senderはクラス名, inquiryはインスタンス名、これをして@contactを送る！
-        respond_to do |format|
-          format.json{
-            render json: @contact #json形式で送られてきたので、きちんとrender json:@contactをしてあげて、返してあげないとActionController::UnknownFormatのエラーになって、きちんと送信できなくなる。
-          }
-        end
       else
-        render :news
+        render :new
       end
   end
 
-
-
-
   private
   def contact_params
-    params.permit(:name, :email, :text, :university, :grade)
+    params.require(:contact).permit(:name, :email, :text, :university, :grade)
   end
 end
-
-
