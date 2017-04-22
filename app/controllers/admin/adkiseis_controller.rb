@@ -55,6 +55,7 @@ class Admin::AdkiseisController < Admin::ApplicationController
 
   def show
     @adkisei = Adkisei.find(params[:id])
+    @adusers = @adkisei.adusers
   end
 
   private

@@ -3,7 +3,7 @@ class Admin::AdusersController < Admin::ApplicationController
   before_action :set_adminuser, only: [:new, :edit, :destroy]
 
   def index
-    @adusers = Aduser.all
+    @adusers = Aduser.order(adkisei_id: :asc)
     @adkiseis = Adkisei.all
   end
 
