@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20170406025140) do
   create_table "adusers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "university"
-    t.integer  "studentnumber"
+    t.string  "studentnumber"
     t.string   "role"
     t.string   "email"
     t.string   "adress"
