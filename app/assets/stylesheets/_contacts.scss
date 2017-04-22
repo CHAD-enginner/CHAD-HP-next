@@ -8,6 +8,9 @@
     position: relative; /*親要素をrelativeで指定してあげると、子要素の */
 }
 
+.after-create {
+  margin-top: 200px;
+}
 
 
 // .intro-header::before{

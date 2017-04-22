@@ -1,0 +1,15 @@
+:javascript
+  history.pushState(null, null, null);
+
+  window.addEventListener("popstate", function() {
+      history.pushState(null, null, null);
+      alert("戻る行為はできません。");
+      window.location.href = 'https://challengeofchad.jimdo.com/'
+  });
+
+.contact-intro-header
+  .after-create
+    %h3 お問い合わせありがとうございます。
+    %br
+    %h3 担当のものが二、三日以内に返信いたします。
+    =link_to "ホームに戻る", 'https://challengeofchad.jimdo.com/', class: "btn"
