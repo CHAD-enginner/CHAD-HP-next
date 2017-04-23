@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
       if @contact.save
-        MailSenderMailer.inquiry(@contact).deliver #rails g mailer mail_sender inquiry, mail_senderはクラス名, inquiryはインスタンス名、これをして@contactを送る！
+        MailSenderMailer.inquiry(@contact).deliver_now #rails g mailer mail_sender inquiry, mail_senderはクラス名, inquiryはインスタンス名、これをして@contactを送る！
       else
         render :new
       end
