@@ -17,8 +17,8 @@
             %tr
               %th 期生
               %th 紹介文
-              %th 作成日時
-              %th 更新日時
+              %th 入団年月
+              %th 卒団年月
               %th 設定
           %tbody
             -@adkiseis.each do |kisei|
@@ -28,9 +28,9 @@
                 %td
                   =kisei.text
                 %td
-                  =kisei.createtime
+                  =kisei.joining
                 %td
-                  =kisei.updatetime
+                  =kisei.graduating
                 %td.center
                   =link_to admin_adkisei_path(kisei.id), class: "detail-btn", style: "width: 50%; height: 100%; display: block; float: left;" do
                     詳細
