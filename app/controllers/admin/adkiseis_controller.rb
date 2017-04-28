@@ -61,7 +61,7 @@ class Admin::AdkiseisController < Admin::ApplicationController
   private
 
   def adkisei_params
-    params.require(:adkisei).permit(:name, :text, :backimage)
+    params.require(:adkisei).permit(:name, :text, :backimage, :joining, :graduating)
   end
 
   def set_adminuser
