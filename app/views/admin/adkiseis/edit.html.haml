@@ -19,6 +19,14 @@
                 %span.form-require （必須）
                 =f.text_area :text, required: true, placeholder: "例）僕たち一期生は学生団体CHADを創設しました。", class: "form-control"
               .form-group
+                =f.label :入団年月
+                %span.form-require
+                = f.text_field :joining, placeholder: "例）2017年4月", class: "form-control"
+              .form-group
+                =f.label :卒団年月
+                %span.form-require
+                = f.text_field :graduating, placeholder: "例）2021年3月", class: "form-control"
+              .form-group
                 =f.label :背景画像
                 =f.file_field :backimage
               =f.submit "編集", class: "btn btn-default" #classを複数指定する場合はこのようにする。

@@ -16,8 +16,8 @@
             %tr
               %th 期生
               %th 紹介文
-              %th 作成日時
-              %th 更新日時
+              %th 入団年月
+              %th 卒団年月
           %tbody
             %tr.odd.gradeX
             %td
@@ -25,9 +25,9 @@
             %td
               =@adkisei.text
             %td
-              =@adkisei.created_at.to_s(:short)
+              =@adkisei.joining
             %td
-              =@adkisei.updated_at.to_s(:short)
+              =@adkisei.graduating
 -if current_adminuser.id == 2
   = link_to edit_admin_adkisei_path(@adkisei.id) do
     .well
