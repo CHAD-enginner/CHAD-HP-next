@@ -34,7 +34,7 @@
           %tbody
             -@adusers.each do |aduser|
               %tr.odd.gradeX
-                %td
+                %td(class="kisei-color-#{aduser.adkisei_id}")
                   =aduser.adkisei.name
                 %td
                   =aduser.name
