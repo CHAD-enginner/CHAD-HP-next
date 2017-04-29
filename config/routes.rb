@@ -24,11 +24,15 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :adcontacts
+    resources :adcontacts, only: [:index]
   end
 
   namespace :admin do
     root 'addashboard#index'
+  end
+
+  namespace :admin do
+    resources :adcalenders, only: [:index]
   end
 
 
