@@ -36,7 +36,7 @@
           -else
             -@adusers.each do |aduser|   #@adusersの中身が一つの場合でも、値は配列型で送られてくるのでeachで出してあげる必要がある。
               %tr.odd.gradeX
-                %td
+                %td(class="kisei-color-#{aduser.adkisei_id}")
                   =aduser.adkisei.name
                 %td
                   =aduser.name
