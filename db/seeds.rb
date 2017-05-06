@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # Adminuser.create!(id: 1, email: 'cambodiachad0917@gmail.com', password: 'cambodia0917', password_confirmation: 'cambodia0917')
-Adminuser.create!(id: 2, email: 'rinpe-edit@gmail.com', password: 'rinpe-edit', password_confirmation: 'rinpe-edit')
+# Adminuser.create!(id: 2, email: 'rinpe-edit@gmail.com', password: 'rinpe-edit', password_confirmation: 'rinpe-edit')
 
 
 require "csv"
