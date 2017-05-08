@@ -37,6 +37,18 @@
                 =f.label :電話番号
                 =f.text_field :phone, placeholder: "", class: "form-control"
               .form-group
-                =f.label :顔写真
-                =f.file_field :avator
+                %label.btn-position
+                  =f.file_field :avator, style: "display:none;"
+                  %span.btn
+                    顔写真を選択
               =f.submit '作成', class: "btn btn-default"
+
+:javascript
+  $(function() {
+      // jQuery Upload Thumbs
+      $('form input:file').uploadThumbs({
+          position : 0,      // 0:before, 1:after, 2:parent.prepend, 3:parent.append,
+                             // any: arbitrarily jquery selector
+          imgbreak : true    // append <br> after thumbnail images
+      });
+  });

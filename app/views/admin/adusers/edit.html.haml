@@ -1,6 +1,6 @@
 .row
   .col-lg-12
-    %h1.page-header メンバー作成
+    %h1.page-header メンバー編集
 .row
   .col-lg-12
     .panel.panel-default
@@ -37,9 +37,20 @@
                 =f.label :電話番号
                 =f.text_field :phone, placeholder: "", class: "form-control"
               .form-group
-                =f.label :顔写真
-                =f.file_field :avator
+                %label.btn-position
+                  =f.file_field :avator, style: "display:none;"
+                  %span.btn
+                    顔写真を選択
               =f.submit '編集', class: "btn btn-default"
               =link_to "/admin/adusers/#{@aduser.id}", method: :delete, data: {confirm: "本当に削除しますか？"} do
                 .btn.btn-default.delete-btn
                   削除
+:javascript
+  $(function() {
+      // jQuery Upload Thumbs
+      $('form input:file').uploadThumbs({
+          position : 0,      // 0:before, 1:after, 2:parent.prepend, 3:parent.append,
+                             // any: arbitrarily jquery selector
+          imgbreak : true    // append <br> after thumbnail images
+      });
+  });
