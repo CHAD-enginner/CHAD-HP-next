@@ -1,3 +1,0 @@
-id,"email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at",sign_in_count,"current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip",failed_attempts,"locked_at","created_at","updated_at"
-1,"cambodiachad0917@gmail.com","$2a$11$AGoL/mDJSD683mhtjHxNNeMOjH9EuBVGIX8Ni8V7F6CsZyJrrYE.i",NULL,NULL,NULL,36,"2017-04-28 08:20:42","2017-04-28 07:55:49","182.251.120.209","220.157.159.154",0,NULL,"2017-04-17 02:56:34","2017-04-28 08:20:42"
-2,"rinpe-edit@gmail.com","$2a$11$wfkE5LoJJK9VsH8djhzyNOvrvI01xukmWFWoXMI2PmkhNfR.0AZcK",NULL,NULL,NULL,10,"2017-04-27 11:03:52","2017-04-24 04:22:54","49.104.13.130","119.242.225.58",0,NULL,"2017-04-17 14:32:44","2017-04-27 11:03:52"

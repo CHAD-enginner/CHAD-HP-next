@@ -22,8 +22,7 @@ test/mailers/mail_sender_mailer_test.rb
 
 .env
 
+
 app/mailers/mail_sender_mailer.rb
 
-
-
-
+db/seeds.rb
