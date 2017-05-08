@@ -27,9 +27,20 @@
                 %span.form-require
                 = f.text_field :graduating, placeholder: "例）2021年3月", class: "form-control"
               .form-group
-                =f.label :背景画像
-                =f.file_field :backimage
+                %label.btn-position
+                  =f.file_field :backimage, style: "display:none;"
+                  %span.btn
+                    背景画像を選択
               =f.submit "編集", class: "btn btn-default" #classを複数指定する場合はこのようにする。
               =link_to "/admin/adkiseis/#{@adkisei.id}", method: :delete, data: {confirm: "本当に削除しますか？"} do
                 .btn.btn-default.delete-btn
                   削除
+:javascript
+  $(function() {
+      // jQuery Upload Thumbs
+      $('form input:file').uploadThumbs({
+          position : 0,      // 0:before, 1:after, 2:parent.prepend, 3:parent.append,
+                             // any: arbitrarily jquery selector
+          imgbreak : true    // append <br> after thumbnail images
+      });
+  });
