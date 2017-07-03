@@ -76,6 +76,11 @@ class Admin::AdusersController < Admin::ApplicationController
     end
   end
 
+  def notify_to_slack
+    text = "#{params[:name].gsub(" ", "")}さんのプロフィールが閲覧されました"
+    Slack.chat_postMessage text: text, username: "ログさん", channel: "#chat-member-log"
+  end
+
 
   private
 

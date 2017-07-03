@@ -52,4 +52,6 @@ Rails.application.routes.draw do
   get '/admin/contacts',        to: 'admin/adcontacts#index'
   get '/admin/kiseis/new',      to: 'admin/adkiseis#new'
   get '/admin/users/new',       to: 'admin/adusers#new'
+  get '/admin/slack/post',      to: 'admin/adusers#notify_to_slack'
 end
+

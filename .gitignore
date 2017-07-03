@@ -26,3 +26,6 @@ test/mailers/mail_sender_mailer_test.rb
 app/mailers/mail_sender_mailer.rb
 
 db/seeds.rb
+
+config/initializers/slack_api.rb
+vendor/bundle
