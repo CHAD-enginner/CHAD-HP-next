@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170428071327) do
+ActiveRecord::Schema.define(version: 20171112042742) do
+
+  create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint   "graph_id",                                            null: false
+    t.string   "name",                                                null: false
+    t.string   "first_name",                                          null: false
+    t.string   "last_name",                                           null: false
+    t.integer  "gender",                                              null: false
+    t.string   "email",                                               null: false
+    t.string   "locale",                            default: "js_JP", null: false
+    t.float    "timezone",            limit: 24,                      null: false
+    t.string   "profile_page_url",                                    null: false
+    t.text     "profile_picture_url", limit: 65535,                   null: false
+    t.integer  "age_range_min",       limit: 2,                       null: false
+    t.text     "access_token",        limit: 65535,                   null: false
+    t.datetime "token_expire",                                        null: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
+  end
 
   create_table "adkiseis", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -53,6 +71,8 @@ ActiveRecord::Schema.define(version: 20170428071327) do
     t.integer  "adkisei_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "account_id",                 comment: "accountのid"
+    t.index ["account_id"], name: "index_adusers_on_account_id", using: :btree
     t.index ["adkisei_id"], name: "index_adusers_on_adkisei_id", using: :btree
     t.index ["name"], name: "index_adusers_on_name", using: :btree
   end
@@ -88,4 +108,5 @@ ActiveRecord::Schema.define(version: 20170428071327) do
     t.index ["kisei_id"], name: "index_users_on_kisei_id", using: :btree
   end
 
+  add_foreign_key "adusers", "accounts"
 end

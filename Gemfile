@@ -36,6 +36,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'dotenv-rails'
 gem 'slack-api'
+gem 'koala'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

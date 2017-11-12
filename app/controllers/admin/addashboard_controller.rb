@@ -1,6 +1,6 @@
 class Admin::AddashboardController < Admin::ApplicationController
 
-  before_action :notify_to_slack
+  before_action :notify_to_slack, :auth_user
 
   def index
     @adkiseis = Adkisei.all
