@@ -6,7 +6,6 @@
 
   var notifyToSlack = function(user_name){
     data_user_name = JSON.stringify({user_nassme: user_name});
-    console.log(data_user_name)
     $.ajax({
       url: '/admin/slack/post',
       type: 'GET',
