@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20171112042742) do
     t.string   "first_name",                                          null: false
     t.string   "last_name",                                           null: false
     t.integer  "gender",                                              null: false
-    t.string   "email",                                               null: false
     t.string   "locale",                            default: "js_JP", null: false
     t.float    "timezone",            limit: 24,                      null: false
     t.string   "profile_page_url",                                    null: false

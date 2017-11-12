@@ -6,7 +6,6 @@ class CreateAccounts < ActiveRecord::Migration[5.0]
       t.string :first_name, null: false
       t.string :last_name, null: false
       t.integer :gender, null: false
-      t.string :email, null: false
       t.string :locale, null: false, default: 'js_JP'
       t.float :timezone, null: false
       t.string :profile_page_url, null: false
