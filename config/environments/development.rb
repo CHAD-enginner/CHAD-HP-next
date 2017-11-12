@@ -26,6 +26,9 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+# TODO:
+# デプロイした（FBログイン関連の編集）後、production.rbにも、以下と同じような処理をかく！
+# productionでは、herokuのドメイン
     Rails.application.routes.default_url_options = { host: 'localhost:3000' }
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
