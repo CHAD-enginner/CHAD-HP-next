@@ -14,8 +14,8 @@ class Admin::ApplicationController < ActionController::Base
       # redirect_toで返す
       return redirect_to FacebookAuthService.new.auth_uri
     end
+    # アカウント情報をインスタンス変数に格納して返す
     @account = Account.find(cookies['chad_account_id'])
     FacebookAuthService.new.auth_uri if @account.check_token_expired?
-    # アカウント情報をインスタンス変数に格納して返す
   end
 end

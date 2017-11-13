@@ -3,6 +3,7 @@ class Admin::FbLoginController < Admin::ApplicationController
 
   def index
     notify_to_slack
+    @account.event_logs.create(event_type: 'login')
     # すでに、cookiesが存在する場合、ダッシューボードページに遷移する
     redirect_to admin_addashboard_index_path
   end
