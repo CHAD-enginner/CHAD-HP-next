@@ -1,8 +1,10 @@
 class Account < ApplicationRecord
+  enum :gender { male: 0, female: 1, other: 2 }
+
   has_one :ad_user
 
-  def check_token_expire
+  def check_token_expired?
     # tokenの有効期限が切れていた場合、再びFBログインさせて、tokenを再発行する
-    FacebookAuthService.new.auth_uri if token_expire < Time.zone.now
+    token_expire < Time.zone.now
   end
 end
