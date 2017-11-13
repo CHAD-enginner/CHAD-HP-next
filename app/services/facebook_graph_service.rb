@@ -38,7 +38,8 @@ class FacebookGraphService
 
   def judge_validate_user(access_token)
     validate_token_info = @koala.debug_token(access_token)
-    # 不正なユーザーの場合、再びログインさせる処理に戻す
+    # 基本的に、不正なユーザー以外はFBログイン落ちないので
+    # 処理を落とすだけでおっけい
     fail unless validate_token_info['data']['is_valid']
     fail unless validate_token_info['data']['app_id'] == ENV['FACEBOOK_CLIENT_ID']
     fail unless validate_token_info['data']

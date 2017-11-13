@@ -1,10 +1,11 @@
 class Admin::AdusersController < Admin::ApplicationController
 
   before_action :set_adminuser, only: [:new, :edit, :destroy]
+  before_action :auth_user
 
   def index
-    @adusers = Aduser.order(adkisei_id: :asc)
     @adkiseis = Adkisei.all
+    @adusers = Aduser.order(adkisei_id: :asc)
   end
 
   def new
@@ -77,7 +78,7 @@ class Admin::AdusersController < Admin::ApplicationController
   end
 
   def notify_to_slack
-    text = "#{params[:name].gsub(" ", "")}さんのプロフィールが閲覧されました"
+    text = "#{@account.name}（id=#{@account.id}）さんが#{params[:name].gsub(" ", "")}さんのプロフィールを閲覧しました。"
     Slack.chat_postMessage text: text, username: "ログさん", channel: "#chat-member-log"
   end
 

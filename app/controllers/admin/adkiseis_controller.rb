@@ -1,6 +1,7 @@
 class Admin::AdkiseisController < Admin::ApplicationController
 
   before_action :set_adminuser, only: [:new, :destroy, :edit]
+  before_action :auth_user
 
 
   def index
