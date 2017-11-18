@@ -66,7 +66,7 @@ Rails.application.configure do
 
   # FacebookAuthServiceのcallbackメソッド内で、Rails.application.routesを
   # 利用しているので、ここで設定する
-Rails.application.routes.default_url_options = { host: 'chadadminpage.herokuapp.com' }
+Rails.application.routes.default_url_options = { host: 'https://chadadminpage.herokuapp.com' }
 
 config.action_mailer.perform_deliveries = true
 config.action_mailer.raise_delivery_errors = true
