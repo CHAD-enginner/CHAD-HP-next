@@ -64,6 +64,10 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
+  # FacebookAuthServiceのcallbackメソッド内で、Rails.application.routesを
+  # 利用しているので、ここで設定する
+Rails.application.routes.default_url_options = { host: 'chadadminpage.herokuapp.com' }
+
 config.action_mailer.perform_deliveries = true
 config.action_mailer.raise_delivery_errors = true
 config.action_mailer.delivery_method = :smtp
