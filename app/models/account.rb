@@ -11,6 +11,7 @@ class Account < ApplicationRecord
 
   def currently_logined?
     event_logs = self.event_logs.where(event_type: 0, created_at: today)
+    return false if event_logs.blank?
     # 最近ログインしていたらtrueを返す
     event_logs.last.created_at > Time.zone.now - 2.hours
   end
