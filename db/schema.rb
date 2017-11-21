@@ -89,11 +89,11 @@ ActiveRecord::Schema.define(version: 20171113053540) do
   create_table "event_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "event_type", null: false
     t.integer  "account_id"
-    t.integer  "ad_user_id"
+    t.integer  "aduser_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_event_logs_on_account_id", using: :btree
-    t.index ["ad_user_id"], name: "index_event_logs_on_ad_user_id", using: :btree
+    t.index ["aduser_id"], name: "index_event_logs_on_aduser_id", using: :btree
   end
 
   create_table "kiseis", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

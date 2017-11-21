@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     root 'fb_login#index'
   end
 
+  root 'admin/fb_login#index'
+
 
   scope '/auth' do
     get '/callback' => 'auth#callback'

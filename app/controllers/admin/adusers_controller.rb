@@ -63,6 +63,7 @@ class Admin::AdusersController < Admin::ApplicationController
 
   def show
     @aduser = Aduser.find(params[:id])
+    @aduser.event_logs.create(event_type: 'user_clicked', account_id: @account.id)
   end
 
   def destroy
