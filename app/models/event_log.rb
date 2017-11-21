@@ -3,5 +3,5 @@ class EventLog < ApplicationRecord
   enum event_type: { login: 0, user_clicked: 1 }
 
   belongs_to :account
-  belongs_to :ad_user, optional: true
+  belongs_to :aduser, optional: true
 end
