@@ -11,7 +11,8 @@ class FacebookGraphService
     # FBから返ってくるexpireは、発行された時から何秒後に
     # tokenが期限切れになるのかを示す
     @expire = token_info[:expires_in]
-    judge_validate_user(token_info[:access_token])
+    # あとで、エラーハンドリングする
+    # judge_validate_user(token_info[:access_token])
   end
 
   def get_facebook_user
