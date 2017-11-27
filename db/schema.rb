@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171127092520) do
+ActiveRecord::Schema.define(version: 20171127092750) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint   "graph_id",                                            null: false
@@ -118,27 +118,37 @@ ActiveRecord::Schema.define(version: 20171127092520) do
   end
 
   create_table "weekly_account_click_counts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "account_id"
-    t.integer  "number_of_times"
+    t.integer  "account_id",                   comment: "クリックしたアカウントのid"
+    t.integer  "number_of_times",              comment: "アカウントがユーザーをクリックした回数"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["account_id"], name: "index_weekly_account_click_counts_on_account_id", using: :btree
   end
 
   create_table "weekly_clicked_user_counts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "aduser_id"
-    t.integer  "number_of_times"
+    t.integer  "aduser_id",                    comment: "クリックされたユーザーのid"
+    t.integer  "number_of_times",              comment: "ユーザーがクリックされた回数"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["aduser_id"], name: "index_weekly_clicked_user_counts_on_aduser_id", using: :btree
   end
 
   create_table "weekly_login_counts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "account_id"
-    t.integer  "number_of_times"
+    t.integer  "account_id",                   comment: "ログインしたアカウントのid"
+    t.integer  "number_of_times",              comment: "ログイン回数"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["account_id"], name: "index_weekly_login_counts_on_account_id", using: :btree
+  end
+
+  create_table "weekly_user_clicked_counts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "account_id",                   comment: "クリックしたアカウントのid"
+    t.integer  "aduser_id",                    comment: "クリックされたユーザーのid"
+    t.integer  "number_of_times",              comment: "アカウントがユーザーをクリックした回数"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["account_id"], name: "index_weekly_user_clicked_counts_on_account_id", using: :btree
+    t.index ["aduser_id"], name: "index_weekly_user_clicked_counts_on_aduser_id", using: :btree
   end
 
   add_foreign_key "adusers", "accounts"
