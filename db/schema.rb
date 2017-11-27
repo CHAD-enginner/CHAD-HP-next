@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171127091451) do
+ActiveRecord::Schema.define(version: 20171127092520) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint   "graph_id",                                            null: false
@@ -115,6 +115,22 @@ ActiveRecord::Schema.define(version: 20171127091451) do
     t.datetime "updated_at", null: false
     t.string   "role"
     t.index ["kisei_id"], name: "index_users_on_kisei_id", using: :btree
+  end
+
+  create_table "weekly_account_click_counts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "account_id"
+    t.integer  "number_of_times"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["account_id"], name: "index_weekly_account_click_counts_on_account_id", using: :btree
+  end
+
+  create_table "weekly_clicked_user_counts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "aduser_id"
+    t.integer  "number_of_times"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["aduser_id"], name: "index_weekly_clicked_user_counts_on_aduser_id", using: :btree
   end
 
   create_table "weekly_login_counts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
