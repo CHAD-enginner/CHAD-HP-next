@@ -1,7 +1,7 @@
 class Account < ApplicationRecord
   enum gender: { male: 0, female: 1, other: 2 }
 
-  has_one :ad_user
+  has_one :aduser
   has_many :event_logs
 
   def check_token_expired?
