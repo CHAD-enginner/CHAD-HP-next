@@ -24,5 +24,8 @@ module CHADHp
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     config.assets.initialize_on_precompile = false
+    # 以下を記述しないと、ファイルを読み込むことができない
+    config.autoload_paths += Dir["#{config.root}/lib/**/*"]
+    config.autoload_paths += Dir["#{config.root}/app/tasks"]
   end
 end
