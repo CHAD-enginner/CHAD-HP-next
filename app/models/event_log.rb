@@ -4,4 +4,9 @@ class EventLog < ApplicationRecord
 
   belongs_to :account
   belongs_to :aduser, optional: true
+
+  class << self
+    def limit_top_five
+    end
+  end
 end
