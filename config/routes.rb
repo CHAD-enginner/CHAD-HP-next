@@ -13,10 +13,11 @@ Rails.application.routes.draw do
     resources :adcontacts, only: [:index]
     resources :adcalenders, only: [:index]
     resources :addashboard, only: %i[index]
-    root 'fb_login#index'
+    # root 'fb_login#index'
+    root 'addashboard#index'
   end
 
-  root 'admin/fb_login#index'
+  # root 'admin/fb_login#index'
 
 
   scope '/auth' do

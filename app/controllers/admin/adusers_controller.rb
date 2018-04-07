@@ -1,7 +1,7 @@
 class Admin::AdusersController < Admin::ApplicationController
 
   before_action :set_adminuser, only: [:new, :edit, :destroy]
-  before_action :auth_user
+  # before_action :auth_user
 
   def index
     @adkiseis = Adkisei.all
@@ -63,7 +63,8 @@ class Admin::AdusersController < Admin::ApplicationController
 
   def show
     @aduser = Aduser.find(params[:id])
-    @aduser.event_logs.create(event_type: 'user_clicked', account_id: @account.id)
+    # FIXME: FBログインが修正できるまでログを残さないように編集
+    # @aduser.event_logs.create(event_type: 'user_clicked', account_id: @account.id)
   end
 
   def destroy

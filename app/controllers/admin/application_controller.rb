@@ -4,7 +4,8 @@ class Admin::ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     # deviseでログインした後に、FBログインをさせる
-    admin_root_path
+    # admin_root_path
+    redirect_to admin_addashboard_index_path
   end
 
   def auth_user

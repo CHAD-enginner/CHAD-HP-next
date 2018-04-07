@@ -1,6 +1,7 @@
 class Admin::AddashboardController < Admin::ApplicationController
 
-  before_action :auth_user
+  # Fbログイン修正が完成するまで、コメントアウト
+  # before_action :auth_user
 
   def index
     @adkiseis = Adkisei.all
