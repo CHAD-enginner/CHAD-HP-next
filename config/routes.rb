@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :adminusers
+  devise_for :adminusers, controllers: {
+    omniauth_callbacks: "omniauth_callbacks"
+  }
   resources :contacts, only: [:new, :create]
   resources :fb_login, only: %i[index]
 
