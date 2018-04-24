@@ -1,11 +1,21 @@
 class Admin::ApplicationController < ActionController::Base
 
-   before_action :authenticate_adminuser!
+  before_action :authenticate_adminuser!
 
   def after_sign_in_path_for(resource)
     # deviseでログインした後に、FBログインをさせる
     # admin_root_path
-    redirect_to admin_addashboard_index_path
+
+
+    # redirect_to admin_addashboard_index_path
+  end
+
+  def auth_line_user
+    if cookies[:chad_account_id].blank?
+       return redirect_to LineAuthService.new.auth_uri
+    end
+    @account = Account.find_by(hash_id: cookies[:chad_account_id])
+    redirect_to LineAuthService.new.auth_uri if @account.check_token_expired?
   end
 
   def auth_user

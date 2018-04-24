@@ -5,7 +5,7 @@ class Account < ApplicationRecord
   has_many :event_logs
 
   def check_token_expired?
-    # tokenの有効期限が切れていた場合、再びFBログインさせて、tokenを再発行する
+    # tokenの有効期限が切れていた場合、再びFB/LINEログインさせて、tokenを再発行する
     token_expire < Time.zone.now
   end
 

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :adminusers
+  devise_for :adminusers, controllers: {
+    omniauth_callbacks: "omniauth_callbacks"
+  }
   resources :contacts, only: [:new, :create]
   resources :fb_login, only: %i[index]
 
@@ -13,12 +15,8 @@ Rails.application.routes.draw do
     resources :adcontacts, only: [:index]
     resources :adcalenders, only: [:index]
     resources :addashboard, only: %i[index]
-    # root 'fb_login#index'
-    root 'addashboard#index'
+    root 'line_logins#login'
   end
-
-  # root 'admin/fb_login#index'
-
 
   scope '/auth' do
     get '/callback' => 'auth#callback'

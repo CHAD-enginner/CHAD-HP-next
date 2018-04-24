@@ -8,6 +8,10 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'd0501f9b43adc39b86619ebfe2d0984649e1fa9ed144cb9717a8159fce2da327c31f8cd25df1ae3edab4bfabc06fd6c30363fd3195b4f16f171e9c44a2d669ac'
 
+  # line login
+  OAUTH_CONFIG = YAML.load_file("#{Rails.root}/config/settings.yml")[Rails.env].symbolize_keys!
+  config.omniauth :line, OAUTH_CONFIG[:line]['key'], OAUTH_CONFIG[:line]['secret']
+
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class

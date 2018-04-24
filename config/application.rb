@@ -27,5 +27,6 @@ module CHADHp
     # 以下を記述しないと、ファイルを読み込むことができない
     config.autoload_paths += Dir["#{config.root}/lib/**/*"]
     config.autoload_paths += Dir["#{config.root}/app/tasks"]
+    config.active_record.schema_format = :sql
   end
 end
