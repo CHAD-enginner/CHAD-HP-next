@@ -15,12 +15,8 @@ Rails.application.routes.draw do
     resources :adcontacts, only: [:index]
     resources :adcalenders, only: [:index]
     resources :addashboard, only: %i[index]
-    # root 'fb_login#index'
-    root 'addashboard#index'
+    root 'line_logins#login'
   end
-
-  # root 'admin/fb_login#index'
-
 
   scope '/auth' do
     get '/callback' => 'auth#callback'
