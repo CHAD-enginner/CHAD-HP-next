@@ -10,9 +10,9 @@ class Admin::LineLoginsController < ApplicationController
 
   def auth_line_user
     if cookies[:chad_account_id].blank?
-       return redirect_to LineAuthService.new.auth_uri
+       return redirect_to LineAuthService.new.auth_uri(request)
     end
     @account = Account.find_by(hash_id: cookies[:chad_account_id])
-    redirect_to LineAuthService.new.auth_uri if @account.check_token_expired?
+    redirect_to LineAuthService.new.auth_uri(request) if @account.check_token_expired?
   end
 end

@@ -5,7 +5,7 @@ class LineAuthService
     @account = Account.new
   end
 
-  def auth_uri
+  def auth_uri(request)
     # cookiesがない場合は、lineログインさせる
     # 開発環境の場合
     # ホストはその都度変える
