@@ -10,7 +10,7 @@ Devise.setup do |config|
 
   # line login
   OAUTH_CONFIG = YAML.load_file("#{Rails.root}/config/settings.yml")[Rails.env].symbolize_keys!
-  config.omniauth :kinsho.inc, OAUTH_CONFIG[:line]['key'], OAUTH_CONFIG[:line]['secret']
+  config.omniauth :line, OAUTH_CONFIG[:line]['key'], OAUTH_CONFIG[:line]['secret']
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
