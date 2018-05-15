@@ -38,6 +38,7 @@ gem 'dotenv-rails'
 gem 'slack-api'
 gem 'koala'
 gem 'omniauth-line'
+gem 'jwt'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
