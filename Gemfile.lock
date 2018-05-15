@@ -470,6 +470,7 @@ DEPENDENCIES
   inherited_resources!
   jbuilder (~> 2.5)
   jquery-rails
+  jwt
   koala
   letter_opener
   listen (~> 3.0.5)
