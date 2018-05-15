@@ -1,23 +1,26 @@
-.row
-  .col-lg-12
-    %h1.page-header お問い合わせ一覧
-.row
-  .col-lg-12
-    .panel.panel-default
+- if @account.id == 3
+  %iframe{:allowtransparency => "", :frameborder => "0", :height => "90%", :src => "#{@iframe_url}", :width => "100%"}
+- else
+  .row
+    .col-lg-12
+      %h1.page-header お問い合わせ一覧
+  .row
+    .col-lg-12
+      .panel.panel-default
       .panel-heading
         Contacts DataTables
       .panel-body
         %table#dataTables-example.table.table-striped.table-bordered.table-hover{width: "100%"}
           %thead
             %tr
-              %th 名前
-              %th メール
-              %th 大学・企業
-              %th 学年
-              %th 問い合わせ内容
+            %th 名前
+            %th メール
+            %th 大学・企業
+            %th 学年
+            %th 問い合わせ内容
           %tbody
-          -@contacts.each do |contact|
-            %tr.odd.gradeX
+            -@contacts.each do |contact|
+              %tr.odd.gradeX
               %td
                 =contact.name
               %td
