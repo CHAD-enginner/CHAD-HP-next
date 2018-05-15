@@ -9,7 +9,7 @@ class LineAuthService
     # cookiesがない場合は、lineログインさせる
     # 開発環境の場合
     # ホストはその都度変える
-    return "https://86d29464.ngrok.io/adminusers/auth/line" if Rails.env == "development"
+    return "https://90b41232.ngrok.io/adminusers/auth/line" if Rails.env == "development"
     # 本番環境の場合
     "https://#{request.host}/adminusers/auth/line"
   end
