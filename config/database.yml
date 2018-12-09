@@ -50,6 +50,6 @@ test:
 production:
   <<: *default
   database: CHAD-HP_production
-  username: CHAD-HP
-  password: <%= ENV['CHAD-HP_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['CHAD_HP_DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
