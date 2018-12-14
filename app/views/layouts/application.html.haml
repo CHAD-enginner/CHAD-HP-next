@@ -10,74 +10,74 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = favicon_link_tag 'chad.ico'
   %body
-    %nav.navbar.navbar-default.navbar-fixed-top.topnav{role: "navigation"}
-      .topnav
-        .navbar-header
-          %button.navbar-toggle{"data-target": "#bs-example-navbar-collapse-1", "data-toggle": "collapse", type: "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          = link_to "学生団体CHAD", root_path, class: "navbar-brand topnav"
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse.w
-          %ul.nav.navbar-nav.navbar-right
-            %li
-              = link_to "CHADとは", introductions_path
-            %li
-              = link_to "理念・活動目的", missions_path
-            %li.actions-bar
-              = link_to "活動内容", actions_path
-              %ul.actions-sub
-              /   %li.sub-list
-              /     =link_to "運動会", actions_sports_path, class: "sub-word"
-              /   %li.sub-list
-              /     =link_to "教育", actions_educations_path, class: "sub-word"
-            %li.trails-bar
-              = link_to "CHADの軌跡", trails_path
-              %ul.trails-sub
-            %li.members-bar
-              = link_to "メンバー", members_path
-              %ul.members-sub
-            %li
-              = link_to "お問い合わせ", new_contact_path
+    -# %nav.navbar.navbar-default.navbar-fixed-top.topnav{role: "navigation"}
+    -#   .topnav
+    -#     .navbar-header
+    -#       %button.navbar-toggle{"data-target": "#bs-example-navbar-collapse-1", "data-toggle": "collapse", type: "button"}
+    -#         %span.sr-only Toggle navigation
+    -#         %span.icon-bar
+    -#         %span.icon-bar
+    -#         %span.icon-bar
+    -#       = link_to "学生団体CHAD", root_path, class: "navbar-brand topnav"
+    -#     #bs-example-navbar-collapse-1.collapse.navbar-collapse.w
+    -#       %ul.nav.navbar-nav.navbar-right
+    -#         %li
+    -#           = link_to "CHADとは", introductions_path
+    -#         %li
+    -#           = link_to "理念・活動目的", missions_path
+    -#         %li.actions-bar
+    -#           = link_to "活動内容", actions_path
+    -#           %ul.actions-sub
+    -#           /   %li.sub-list
+    -#           /     =link_to "運動会", actions_sports_path, class: "sub-word"
+    -#           /   %li.sub-list
+    -#           /     =link_to "教育", actions_educations_path, class: "sub-word"
+    -#         %li.trails-bar
+    -#           = link_to "CHADの軌跡", trails_path
+    -#           %ul.trails-sub
+    -#         %li.members-bar
+    -#           = link_to "メンバー", members_path
+    -#           %ul.members-sub
+    -#         %li
+    -#           = link_to "お問い合わせ", new_contact_path
     = yield
-    .banner
-      .container
-        .row
-          .col-lg-6
-            %h3.banner-h3 Connect to 学生団体CHAD
-            %p.banner-p 〒602-8580       京都市上京区今出川通烏丸東入 今出川キャンパス
-          .col-lg-6
-            %h3.banner-h3 ミーティング
-            %p.banner-p
-              毎週金曜日
-              %strong 18:40~
-            %p.sss
-    .banner
-      .container
-        .row
-          .col-lg-6
-            %h3.banner-sns
-          .col-lg-6
-            %ul.list-inline.banner-social-buttons
-              %li
-                = link_to "https://twitter.com/cambodia_plan", class: "btn btn-default btn-lg", target: ["_blank"] do # target: ["_blank"]を書くことでリンク先を押すと、別タグで開くようにできる。
-                  %i.fa.fa-twitter.fa-fw
-                  %span.network-name Twitter
-              %li
-                = link_to "https://www.facebook.com/challengeofchad/", class: "btn btn-default btn-lg", target: ["_blank"] do
-                  %i.fa.fa-facebook.fa-fw
-                  %span.network-name FACEBOOK
-              %li
-                = link_to "https://www.instagram.com/chad.0917/", class: "btn btn-default btn-lg", target: ["_blank"] do
-                  %i.fa.fa-instagram.fa-fw
-                  %span.network-name instagram
-              %li
-                = link_to "http://profile.ameba.jp/chad20170111", class: "btn btn-default btn-lg", target: ["_blank"] do
-                  %i.fa.fa-pencil.fa-fw
-                  %span.network-name blog
-    %footer
-      .container-intro
-        .row
-          .col-lg-12
-            %p.copyright.text-muted.small.w Copyright © 学生団体CHAD.2017 All Rights Reserved
+    -# .banner
+    -#   .container
+    -#     .row
+    -#       .col-lg-6
+    -#         %h3.banner-h3 Connect to 学生団体CHAD
+    -#         %p.banner-p 〒602-8580       京都市上京区今出川通烏丸東入 今出川キャンパス
+    -#       .col-lg-6
+    -#         %h3.banner-h3 ミーティング
+    -#         %p.banner-p
+    -#           毎週金曜日
+    -#           %strong 18:40~
+    -#         %p.sss
+    -# .banner
+    -#   .container
+    -#     .row
+    -#       .col-lg-6
+    -#         %h3.banner-sns
+    -#       .col-lg-6
+    -#         %ul.list-inline.banner-social-buttons
+    -#           %li
+    -#             = link_to "https://twitter.com/cambodia_plan", class: "btn btn-default btn-lg", target: ["_blank"] do # target: ["_blank"]を書くことでリンク先を押すと、別タグで開くようにできる。
+    -#               %i.fa.fa-twitter.fa-fw
+    -#               %span.network-name Twitter
+    -#           %li
+    -#             = link_to "https://www.facebook.com/challengeofchad/", class: "btn btn-default btn-lg", target: ["_blank"] do
+    -#               %i.fa.fa-facebook.fa-fw
+    -#               %span.network-name FACEBOOK
+    -#           %li
+    -#             = link_to "https://www.instagram.com/chad.0917/", class: "btn btn-default btn-lg", target: ["_blank"] do
+    -#               %i.fa.fa-instagram.fa-fw
+    -#               %span.network-name instagram
+    -#           %li
+    -#             = link_to "http://profile.ameba.jp/chad20170111", class: "btn btn-default btn-lg", target: ["_blank"] do
+    -#               %i.fa.fa-pencil.fa-fw
+    -#               %span.network-name blog
+    -# %footer
+    -#   .container-intro
+    -#     .row
+    -#       .col-lg-12
+    -#         %p.copyright.text-muted.small.w Copyright © 学生団体CHAD.2017 All Rights Reserved

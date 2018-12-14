@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     root 'line_logins#login'
   end
 
+  root 'hellos#index'
+
   scope '/auth' do
     get '/callback' => 'auth#callback'
   end
